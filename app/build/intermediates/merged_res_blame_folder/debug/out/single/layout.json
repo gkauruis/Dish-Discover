@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-mergeDebugResources-43:\\layout\\activity_recipe.xml",
+        "source": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-main-46:\\layout\\activity_recipe.xml"
+    },
+    {
+        "merged": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-mergeDebugResources-43:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-main-46:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "com.example.dishdiscover.app-mergeDebugResources-43:/layout/activity_recipe.xml",
+        "source": "com.example.dishdiscover.app-main-46:/layout/activity_recipe.xml"
+    },
+    {
+        "merged": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-mergeDebugResources-43:\\layout\\row_data_recepies.xml",
+        "source": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-main-46:\\layout\\row_data_recepies.xml"
+    },
+    {
+        "merged": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-mergeDebugResources-43:\\layout\\content_recipe.xml",
+        "source": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-main-46:\\layout\\content_recipe.xml"
+    }
+]
