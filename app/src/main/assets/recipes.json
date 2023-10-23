@@ -45,7 +45,21 @@
       "Weburl": "https://www.allrecipes.com/recipe/16383/basic-crepes/",
       "Comments":"Try it with a strawberry jam"
     },
-    "Steps": [[1, "whisk", "StepImages//Crepes-step1.png"],[2, "heat pan",null],[3, "cook", "StepImages//Crepes-step3.png"]]
+    "Steps": [
+      {"Number": "1",
+        "Action": "Whisk ingredients together",
+        "StepImage": "StepImages//Crepes-step1.png"
+      },
+      {"Number": "2",
+        "Action": "Heat pan",
+        "StepImage": null
+      },
+      {
+        "Number": "3",
+        "Action": "Pour batter and cook",
+        "StepImage": "StepImages//Crepes-step3.png"
+      }
+      ]
   }
 }
 

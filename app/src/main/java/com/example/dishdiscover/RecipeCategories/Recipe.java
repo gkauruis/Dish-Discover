@@ -1,14 +1,21 @@
 package com.example.dishdiscover.RecipeCategories;
 import android.os.Parcel;
 import android.os.Parcelable;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Iterator;
 
 public class Recipe implements Parcelable {
 
     String recipeName;
     int recipeImage;
     List<Ingredient> ingredients = new ArrayList<Ingredient>();
+    List<Step> steps = new ArrayList();
 
     public Recipe(String recipeName, int recipeImage) {
         this.recipeName = recipeName;
@@ -37,6 +44,50 @@ public class Recipe implements Parcelable {
         return ingredients;
     }
 
+    public List<Step> getSteps() {
+        return steps;
+    }
+/*
+    public void setSteps(JSONObject reciperaw) {
+        try {
+            JSONObject stepsRaw = reciperaw.getJSONObject("Steps");
+            Iterator<?> keys = stepsRaw.keys();
+            while(keys.hasNext()) {
+                Step key = (Step) keys.next();
+                steps.add(key);
+            }
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
+        }
+    }
+*/
+
+    public void setSteps(JSONObject reciperaw) {
+        try {
+            JSONObject stepsRaw = reciperaw.getJSONObject("Steps");
+            Iterator<String> keys = stepsRaw.keys();
+            Step tempStep = new Step();
+            while(keys.hasNext()) {
+                for(int i = 0; i < 3; i++) {
+                    if(keys.hasNext()) {
+                        String key = keys.next();
+                        tempStep.number = key;
+                    }
+                    if(keys.hasNext()) {
+                        String key = keys.next();
+                        tempStep.action = key;
+                    }
+                    if(keys.hasNext()) {
+                        String key = keys.next();
+                        tempStep.stepImage = key;
+                    }
+                }
+                steps.add(tempStep);
+            }
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
+        }
+    }
     public String getRecipeName() {
         return recipeName;
     }
