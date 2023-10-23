@@ -1,6 +1,4 @@
 package com.example.dishdiscover.RecipeCategories;
-import android.os.Parcel;
-import android.os.Parcelable;
 
 public class Step {
     String number;
