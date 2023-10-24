@@ -54,22 +54,18 @@ public class Recipe implements Parcelable {
             Iterator<String> keys = stepsRaw.keys();
             Step tempStep = new Step();
             while(keys.hasNext()) {
-                for(int i = 0; i < 3; i++) {
-                    if(keys.hasNext()) {
-                        String key = keys.next();
-                        tempStep.number = key;
-                    }
-                    if(keys.hasNext()) {
-                        String key = keys.next();
-                        tempStep.action = key;
-                    }
-                    if(keys.hasNext()) {
-                        String key = keys.next();
-                        tempStep.stepImage = key;
-                    }
+                String key = keys.next();
+                tempStep.number = key;
+                if(keys.hasNext()) {
+                    key = keys.next();
+                    tempStep.action = key;
+                }
+                if(keys.hasNext()) {
+                    key = keys.next();
+                    tempStep.stepImage = key;
+                }
                 }
                 steps.add(tempStep);
-            }
         } catch (JSONException e) {
             throw new RuntimeException(e);
         }
