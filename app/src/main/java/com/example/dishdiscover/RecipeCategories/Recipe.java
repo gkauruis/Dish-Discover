@@ -11,21 +11,28 @@ import java.util.List;
 import java.util.Iterator;
 
 public class Recipe implements Parcelable {
-
-    String recipeName;
-    int recipeImage;
+    MealFacts mealFacts;
     List<Ingredient> ingredients = new ArrayList<Ingredient>();
     List<Step> steps = new ArrayList();
+    Nutrition nutrition;
 
-    public Recipe(String recipeName, int recipeImage) {
-        this.recipeName = recipeName;
-        this.recipeImage = recipeImage;
-        this.ingredients = ingredients;
+    public Recipe(JSONObject newRecipe, android.content.res.Resources resources,String packagename) {
+        try {
+                setMealFacts(newRecipe.getJSONObject("MealFacts"),resources,packagename);
+                setIngredients(newRecipe.getJSONArray("Ingredients"));
+                setSteps(newRecipe.getJSONArray("Steps"));
+                setNutrition(newRecipe.getJSONObject("Nutrition"));
+            } catch (JSONException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
     protected Recipe(Parcel in) {
-        recipeName = in.readString();
-        recipeImage = in.readInt();
+        this.nutrition = in.readParcelable(Nutrition.class.getClassLoader());
+        this.mealFacts = in.readParcelable(MealFacts.class.getClassLoader());
+        this.steps = in.readArrayList(Step.class.getClassLoader());
+        this.ingredients = in.readArrayList(Ingredient.class.getClassLoader());
     }
 
     public static final Creator<Recipe> CREATOR = new Creator<Recipe>() {
@@ -40,54 +47,58 @@ public class Recipe implements Parcelable {
         }
     };
 
+    public String getRecipeName() {
+        return mealFacts.getMealName();
+    }
+
+
+    public int getRecipeImage() {
+        return this.mealFacts.getMealImage();
+    }
+
     public List<Ingredient> getIngredients() {
         return ingredients;
     }
 
+    public void setIngredients(JSONArray ingredientArray) {
+        Ingredient ingredient;
+        for(int i=0; i<ingredientArray.length(); i++){
+            try {
+                ingredient = new Ingredient(ingredientArray.getJSONObject(i));
+            } catch (JSONException e) {
+                throw new RuntimeException(e);
+            }
+            this.ingredients.add(ingredient);
+        }
+    }
     public List<Step> getSteps() {
         return steps;
     }
 
-    public void setSteps(JSONObject reciperaw) {
+    public void setSteps(JSONArray stepsRaw) {
         try {
-            JSONObject stepsRaw = reciperaw.getJSONObject("Steps");
-            Iterator<String> keys = stepsRaw.keys();
-            Step tempStep = new Step();
-            while(keys.hasNext()) {
-                for(int i = 0; i < 3; i++) {
-                    if(keys.hasNext()) {
-                        String key = keys.next();
-                        tempStep.number = key;
-                    }
-                    if(keys.hasNext()) {
-                        String key = keys.next();
-                        tempStep.action = key;
-                    }
-                    if(keys.hasNext()) {
-                        String key = keys.next();
-                        tempStep.stepImage = key;
-                    }
-                }
-                steps.add(tempStep);
+            Step tempStep;
+            for (int i=0;i<stepsRaw.length();i++) {
+                tempStep = new Step();
+                tempStep.number = stepsRaw.getJSONObject(i).getInt("Number");
+                tempStep.action = stepsRaw.getJSONObject(i).getString("Action");
+                tempStep.stepImage = stepsRaw.getJSONObject(i).getString("StepImage");
+                this.steps.add(tempStep);
             }
         } catch (JSONException e) {
             throw new RuntimeException(e);
         }
     }
-    public String getRecipeName() {
-        return recipeName;
-    }
 
-    public void setRecipeName(String recipeName) {
-        this.recipeName = recipeName;
-    }
+    public MealFacts getMealFacts() {return this.mealFacts;}
 
-    public int getRecipeImage() {
-        return recipeImage;
+    public void setMealFacts(JSONObject mealFactsRaw, android.content.res.Resources resources,String packagename){
+        this.mealFacts = new MealFacts(mealFactsRaw,resources,packagename);
     }
+    public Nutrition getNutrition() {return this.nutrition;}
 
-    public void setRecipeImage(int recipeImage) {
-        this.recipeImage = recipeImage;
+    public void setNutrition(JSONObject nutritionRaw){
+        this.nutrition = new Nutrition(nutritionRaw);
     }
 
     @Override
@@ -97,52 +108,11 @@ public class Recipe implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(recipeName);
-        dest.writeInt(recipeImage);
+        dest.writeParcelable(nutrition,flags);
+        dest.writeParcelable(mealFacts,flags);
+        dest.writeList(steps);
+        dest.writeList(ingredients);
     }
 }
 
 
-class Nutrition {
-    double cal;
-    double fat;
-    double sugar;
-    double salt;
-
-    public Nutrition(double cal, double fat, double sugar, double salt){
-        this.cal = cal;
-        this.fat = fat;
-        this.sugar = sugar;
-        this.salt = salt;
-    }
-}
-
-class MealFacts {
-    String mealName;
-    String mealImage;
-    String mealDescription;
-    String difficulty;
-    double prep;
-    double cooktime;
-    int serves;
-    double rating;
-    String weburl;
-    String comments;
-
-    public MealFacts(String mealName,String mealImage,
-                     String mealDescription, String difficulty,
-                     double prep, double cooktime, int serves,
-                     double rating, String weburl, String comments)
-    {
-        this.mealName = mealName;
-        this.mealImage = mealImage;
-        this.mealDescription = mealDescription;
-        this.difficulty = difficulty;
-        this.prep = prep;
-        this.cooktime = cooktime;
-        this.serves = serves;
-        this.rating = rating;
-        this.weburl = weburl;
-        this.comments = comments;
-    }
-}

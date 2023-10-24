@@ -3,18 +3,44 @@ package com.example.dishdiscover.RecipeCategories;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class Ingredient{
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+public class Ingredient implements Parcelable {
     String name;
     double amt;
     String unit;
 
+    protected Ingredient(Parcel in) {
+        name = in.readString();
+        amt = in.readDouble();
+        unit = in.readString();
+    }
+
+    public static final Creator<Ingredient> CREATOR = new Creator<Ingredient>() {
+        @Override
+        public Ingredient createFromParcel(Parcel in) {
+            return new Ingredient(in);
+        }
+
+        @Override
+        public Ingredient[] newArray(int size) {
+            return new Ingredient[size];
+        }
+    };
+
     public String getAmount() {return amt + " " + unit;}
 
-    public Ingredient(String name, double amt, String unit){
-        super();
-        this.name = name;
-        this.amt = amt;
-        this.unit = unit;
+    public Ingredient(JSONObject ingredient){
+        try {
+            this.name = ingredient.getString("Ingredient");
+            this.amt = ingredient.getDouble("Amount");
+            this.unit = ingredient.getString("Unit");
+    } catch (JSONException e) {
+        throw new RuntimeException(e);
+    }
+
     }
 
     public String getName() {
@@ -39,5 +65,16 @@ public class Ingredient{
 
     public void setUnit(String unit) {
         this.unit = unit;
+    }
+
+
+    public int describeContents() {
+        return 0;
+    }
+
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(name);
+        dest.writeDouble(amt);
+        dest.writeString(unit);
     }
 }

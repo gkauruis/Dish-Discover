@@ -1,5 +1,7 @@
 {
-  "Recipe":{
+  "Recipes":[
+    {
+      "Recipe":{
     "Ingredients":[
       {"Ingredient":"flour",
         "Amount":1,
@@ -26,16 +28,16 @@
         "Unit":"Tablespoon"
       }
     ],
-    "Category":["Breakfast"],
     "Nutrition":{
       "Calories":216,
       "Fat":9,
       "Sugar":2,
       "Salt": 0.235
     },
-    "Mealfacts":{
+    "MealFacts":{
       "MealName": "Crepes",
       "MealImage": "crepes",
+      "Category":["Breakfast"],
       "MealDescription": "A simple crepe recipe",
       "Difficulty": "Easy",
       "Prep": 5,
@@ -59,7 +61,74 @@
         "Action": "Pour batter and cook",
         "StepImage": "StepImages//Crepes-step3.png"
       }
-      ]
+    ]
   }
+    },
+    {
+      "Recipe":{
+      "Ingredients":[
+        {"Ingredient":"flour",
+          "Amount":1,
+          "Unit":"Cup"
+        },
+        {"Ingredient":"Eggs",
+          "Amount":2,
+          "Unit":"Item"
+        },
+        {"Ingredient":"Milk",
+          "Amount": 0.5,
+          "Unit":"Cup"
+        },
+        {"Ingredient":"Water",
+          "Amount":0.5,
+          "Unit":"Cup"
+        },
+        {"Ingredient":"Salt",
+          "Amount": 0.25,
+          "Unit":"Teaspoon"
+        },
+        {"Ingredient":"Butter",
+          "Amount":2,
+          "Unit":"Tablespoon"
+        }
+      ],
+      "Nutrition":{
+        "Calories":216,
+        "Fat":9,
+        "Sugar":2,
+        "Salt": 0.235
+      },
+      "MealFacts":{
+        "MealName": "Dosa",
+        "MealImage": "dosa",
+        "Category":["Breakfast"],
+        "MealDescription": "A simple crepe recipe",
+        "Difficulty": "Easy",
+        "Prep": 5,
+        "Cooktime": 10,
+        "Serves":2,
+        "Rating": 2,
+        "Weburl": "https://www.allrecipes.com/recipe/16383/basic-crepes/",
+        "Comments":"Try it with a strawberry jam"
+      },
+      "Steps": [
+        {"Number": "1",
+          "Action": "Whisk ingredients together",
+          "StepImage": "StepImages//Crepes-step1.png"
+        },
+        {"Number": "2",
+          "Action": "Heat pan",
+          "StepImage": null
+        },
+        {
+          "Number": "3",
+          "Action": "Pour batter and cook",
+          "StepImage": "StepImages//Crepes-step3.png"
+        }
+      ]
+    }
+    }
+  ]
+
 }
 
