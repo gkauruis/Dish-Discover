@@ -1,39 +1,60 @@
 package com.example.dishdiscover.RecipeCategories;
 
-public class Step {
-    String number;
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Step implements Parcelable {
+    int number;
     String action;
     String stepImage;
 
     public Step() {
-        this.number = null;
+        this.number = -1;
         this.action = null;
         this.stepImage = null;
     }
 
-    public Step(String number) {
+    public Step(int number) {
         this.number = number;
         this.action = null;
         this.stepImage = null;
     }
 
-    public Step(String number, String action) {
+    public Step(int number, String action) {
         this.number = number;
         this.action = action;
         this.stepImage = null;
     }
 
-    public Step(String number, String action, String stepIamge) {
+    public Step(int number, String action, String stepIamge) {
         this.number = number;
         this.action = action;
         this.stepImage = stepIamge;
     }
 
-    public String getNumber() {
+    protected Step(Parcel in) {
+        number = in.readInt();
+        action = in.readString();
+        stepImage = in.readString();
+    }
+
+    public static final Creator<Step> CREATOR = new Creator<Step>() {
+        @Override
+        public Step createFromParcel(Parcel in) {
+            return new Step(in);
+        }
+
+        @Override
+        public Step[] newArray(int size) {
+            return new Step[size];
+        }
+    };
+
+    public int getNumber() {
         return number;
     }
 
-    public void setNumber(String number) {
+    public void setNumber(int number) {
         this.number = number;
     }
 
@@ -52,4 +73,15 @@ public class Step {
     public void setStepImage(String stepImage) {
         this.stepImage = stepImage;
     }
+
+
+    public int describeContents() {
+        return 0;
+    }
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(number);
+        dest.writeString(action);
+        dest.writeString(stepImage);
+    }
+
 }

@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.example.dishdiscover.RecipeCategories.Ingredient;
 import com.example.dishdiscover.RecipeCategories.Recipe;
+import com.example.dishdiscover.RecipeCategories.RecipeBook;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -33,7 +34,6 @@ public class MainActivity extends AppCompatActivity implements SelectListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         String jsonString;
-        JSONObject reciperaw;
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
         StringBuilder stringBuilder;
         try {
@@ -52,32 +52,10 @@ public class MainActivity extends AppCompatActivity implements SelectListener{
             throw new RuntimeException(e);
         }
         jsonString = stringBuilder.toString();
-        try {
-            reciperaw = new JSONObject(jsonString).getJSONObject("Recipe");
-        } catch (JSONException e) {
-            throw new RuntimeException(e);
-        }
 
-        try {
-            String mealName = reciperaw.getJSONObject("Mealfacts").getString("MealName");
-            String mealImageResource = reciperaw.getJSONObject("Mealfacts").getString("MealImage");
-            List<Ingredient> ingredientList = new ArrayList<>();
-            JSONArray ingredientsArray = reciperaw.getJSONArray("Ingredients");
-
-            for(int i=0; i<ingredientsArray.length(); i++){
-                String ingredientName = ingredientsArray.getJSONObject(i).getString("Ingredient");
-                double ingredientAmount = ingredientsArray.getJSONObject(i).getDouble("Amount");
-                String ingredientUnit = ingredientsArray.getJSONObject(i).getString("Unit");
-
-                Ingredient ingredient = new Ingredient(ingredientName, ingredientAmount, ingredientUnit);
-                ingredientList.add(ingredient);
-            }
-            Recipe recipe = new Recipe(mealName, getResources().getIdentifier(mealImageResource, "drawable", getPackageName()));
-            recipes.add(recipe);
-        } catch (JSONException e) {
-            throw new RuntimeException(e);
-        }
-//        recipes.add(new Recipe("Dosa", R.drawable.dosa));
+        //getResources().getIdentifier(mealImageResource, "drawable", getPackageName())
+        RecipeBook recipeBook = new RecipeBook(jsonString,getResources(),getPackageName());
+        recipes = recipeBook.getBook();
 
         recyclerView.setLayoutManager(new GridLayoutManager(MainActivity.this, 2));
         recyclerView.setAdapter(new RecyclerAdapter(getApplicationContext(), recipes, this));
