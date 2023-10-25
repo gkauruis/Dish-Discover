@@ -77,14 +77,24 @@ public class Recipe implements Parcelable {
 
     public void setSteps(JSONArray stepsRaw) {
         try {
-            Step tempStep;
-            for (int i=0;i<stepsRaw.length();i++) {
-                tempStep = new Step();
-                tempStep.number = stepsRaw.getJSONObject(i).getInt("Number");
-                tempStep.action = stepsRaw.getJSONObject(i).getString("Action");
-                tempStep.stepImage = stepsRaw.getJSONObject(i).getString("StepImage");
-                this.steps.add(tempStep);
-            }
+
+            JSONObject stepsRaw = reciperaw.getJSONObject("Steps");
+            Iterator<String> keys = stepsRaw.keys();
+            Step tempStep = new Step();
+            while(keys.hasNext()) {
+                String key = keys.next();
+                tempStep.number = key;
+                if(keys.hasNext()) {
+                    key = keys.next();
+                    tempStep.action = key;
+                }
+                if(keys.hasNext()) {
+                    key = keys.next();
+                    tempStep.stepImage = key;
+                }
+                }
+                steps.add(tempStep);
+
         } catch (JSONException e) {
             throw new RuntimeException(e);
         }
