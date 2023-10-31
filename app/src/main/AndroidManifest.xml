@@ -13,6 +13,16 @@
         android:theme="@style/Theme.DishDiscover"
         tools:targetApi="31">
         <activity
+            android:name=".AddRecipeActivity"
+            android:exported="false"
+            android:label="AddRecipeActivity"
+            android:theme="@style/Theme.DishDiscover" />
+        <activity
+            android:name=".StepActivity"
+            android:exported="false"
+            android:label="StepActivity"
+            android:theme="@style/Theme.DishDiscover" />
+        <activity
             android:name=".RecipeActivity"
             android:exported="false"
             android:label="@string/title_activity_recipe"

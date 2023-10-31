@@ -3,6 +3,7 @@ package com.example.dishdiscover.RecipeCategories;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -23,6 +24,14 @@ class Nutrition implements Parcelable {
     }
     }
 
+    public JSONObject getNutritionJSON() throws JSONException {
+        JSONObject nutrition = new JSONObject();
+        nutrition.put("Calories",this.cal);
+        nutrition.put("Fat",this.fat);
+        nutrition.put("Sugar",this.sugar);
+        nutrition.put("Salt",this.salt);
+        return nutrition;
+    }
     protected Nutrition(Parcel in) {
         cal = in.readDouble();
         fat = in.readDouble();
