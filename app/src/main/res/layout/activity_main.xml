@@ -25,7 +25,12 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
+        android:layout_height="617dp" />
+
+    <Button
+        android:id="@+id/newrecipe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add New Recipe" />
 
 </LinearLayout>

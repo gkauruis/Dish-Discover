@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 
 import java.util.ArrayList;
 
-class MealFacts implements Parcelable{
+public class MealFacts implements Parcelable{
     String mealName;
     int mealImage;
     ArrayList<String> category = new ArrayList<String>();
@@ -42,6 +42,25 @@ class MealFacts implements Parcelable{
         }
     }
 
+    public JSONObject getMealFactsJSON() throws JSONException {
+        JSONObject mealfacts = new JSONObject();
+        mealfacts.put("MealName",this.mealName);
+        mealfacts.put("MealImage",this.mealImage);
+        mealfacts.put("MealDescription",this.mealDescription);
+        mealfacts.put("Difficulty",this.difficulty);
+        mealfacts.put("Prep",this.prep);
+        mealfacts.put("Cooktime",this.cooktime);
+        mealfacts.put("Serves",this.serves);
+        mealfacts.put("Rating",this.rating);
+        mealfacts.put("Weburl",this.weburl);
+        mealfacts.put("Comments",this.comments );
+        JSONArray cat = new JSONArray();
+        for (int i=0;i<this.category.size();i++){
+            cat.put(this.category.get(i));
+        }
+        mealfacts.put("Category",cat);
+        return mealfacts;
+    }
     public static final Creator<MealFacts> CREATOR = new Creator<MealFacts>() {
         @Override
         public MealFacts createFromParcel(Parcel in) {
@@ -76,7 +95,12 @@ class MealFacts implements Parcelable{
         return mealName;
     }
 
-
+    public void setMealName(String name){
+        this.mealName = name;
+    }
+    public void setMealDescription(String desc){
+        this.mealDescription = desc;
+    }
     public void setCategory(JSONArray cat) {
         try {
             for (int i=0;i<cat.length();i++){

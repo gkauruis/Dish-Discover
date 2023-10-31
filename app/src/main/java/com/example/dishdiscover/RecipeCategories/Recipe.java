@@ -51,11 +51,22 @@ public class Recipe implements Parcelable {
         return mealFacts.getMealName();
     }
 
+    public JSONObject getRecipeJson() throws JSONException {
+        JSONObject recipejson = new JSONObject();
+        JSONObject reciperaw = new JSONObject();
+        reciperaw.put("MealFacts",this.mealFacts.getMealFactsJSON());
+        reciperaw.put("Ingredients",getIngredientsJSON());
+        reciperaw.put("Nutrition",nutrition.getNutritionJSON());
+        reciperaw.put("Steps",getStepsJSON());
+        recipejson.put("Recipe",reciperaw);
+        return recipejson;
 
+    }
     public int getRecipeImage() {
         return this.mealFacts.getMealImage();
     }
 
+    // ---------------------------Ingredients---------------------------------------------------
     public List<Ingredient> getIngredients() {
         return ingredients;
     }
@@ -71,46 +82,78 @@ public class Recipe implements Parcelable {
             this.ingredients.add(ingredient);
         }
     }
+    public JSONArray getIngredientsJSON() throws JSONException {
+        JSONArray ingredientarray = new JSONArray();
+        JSONObject ingredient;
+        List<Ingredient> ingredients = getIngredients();
+        for (int i=0; i<ingredients.size();i++) {
+            ingredient = new JSONObject();
+            ingredient.put("Ingredient",ingredients.get(i).getName());
+            ingredient.put("Amount",ingredients.get(i).amt);
+            ingredient.put("Unit",ingredients.get(i).getUnit());
+            ingredientarray.put(ingredient);
+        }
+        return ingredientarray;
+    }
+
+    //-----------------------------Steps-----------------------------------------------
     public List<Step> getSteps() {
         return steps;
     }
 
+    public Step getStep(int stepNum) {
+        return steps.get(stepNum);
+    }
+    public int getStepAmt(){return steps.size();}
     public void setSteps(JSONArray stepsRaw) {
         try {
-
-            JSONObject stepsRaw = reciperaw.getJSONObject("Steps");
-            Iterator<String> keys = stepsRaw.keys();
-            Step tempStep = new Step();
-            while(keys.hasNext()) {
-                String key = keys.next();
-                tempStep.number = key;
-                if(keys.hasNext()) {
-                    key = keys.next();
-                    tempStep.action = key;
-                }
-                if(keys.hasNext()) {
-                    key = keys.next();
-                    tempStep.stepImage = key;
-                }
-                }
-                steps.add(tempStep);
+            Step tempStep;
+            for (int i=0;i<stepsRaw.length();i++) {
+                tempStep = new Step();
+                tempStep.number = stepsRaw.getJSONObject(i).getInt("Number");
+                tempStep.action = stepsRaw.getJSONObject(i).getString("Action");
+                tempStep.stepImage = stepsRaw.getJSONObject(i).getString("StepImage");
+                this.steps.add(tempStep);
+            }
 
         } catch (JSONException e) {
             throw new RuntimeException(e);
         }
     }
+    public JSONArray getStepsJSON() throws JSONException {
+        JSONArray steparray = new JSONArray();
+        JSONObject step;
+        List<Step> steps = getSteps();
+        for (int i=0; i<steps.size();i++) {
+            step = new JSONObject();
+            step.put("Number",steps.get(i).getNumber());
+            step.put("Action",steps.get(i).getAction());
+            step.put("StepImage",steps.get(i).getStepImage());
+            steparray.put(step);
+        }
+        return steparray;
+    }
 
+    //-------------------------------MealFacts--------------------------------------------
     public MealFacts getMealFacts() {return this.mealFacts;}
+
+    public void setMealFacts(MealFacts mealfacts){
+        this.mealFacts = mealfacts;
+    }
 
     public void setMealFacts(JSONObject mealFactsRaw, android.content.res.Resources resources,String packagename){
         this.mealFacts = new MealFacts(mealFactsRaw,resources,packagename);
     }
+
+    //-------------------------------------Nutrition---------------------------------------------
     public Nutrition getNutrition() {return this.nutrition;}
 
     public void setNutrition(JSONObject nutritionRaw){
         this.nutrition = new Nutrition(nutritionRaw);
     }
 
+
+    //-------------------------------------Parcel--------------------------------------------------
     @Override
     public int describeContents() {
         return 0;

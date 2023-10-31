@@ -49,21 +49,35 @@
 
     <!-- Use a RecyclerView or a LinearLayout to dynamically display ingredients -->
 
-    <ListView
-        android:id="@+id/ingredientsListView"
+    <TextView
+        android:id="@+id/RecipeInsruction"
         android:layout_width="match_parent"
-        android:layout_height="543dp">
+        android:layout_height="51dp"
+        android:text="TextView" />
 
-    </ListView>
-    <Button
-        android:id="@+id/stepsview"
-        android:layout_width="wrap_content"
-        android:layout_height="63dp"
-        android:text="Steps" />
-    <Button
-        android:id="@+id/homeview"
-        android:layout_width="wrap_content"
-        android:layout_height="63dp"
-        android:text="Home" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/prev"
+            android:layout_width="wrap_content"
+            android:layout_height="66dp"
+            android:layout_weight="1"
+            android:text="Previous" />
+
+        <Button
+            android:id="@+id/Recipe"
+            android:layout_width="121dp"
+            android:layout_height="66dp"
+            android:text="Recipe" />
+
+        <Button
+            android:id="@+id/Next"
+            android:layout_width="139dp"
+            android:layout_height="63dp"
+            android:text="Next" />
+    </LinearLayout>
 
 </LinearLayout>
