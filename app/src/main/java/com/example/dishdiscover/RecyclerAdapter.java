@@ -1,15 +1,21 @@
 package com.example.dishdiscover;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.dishdiscover.RecipeCategories.Recipe;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.List;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<MainModel> {
@@ -33,7 +39,13 @@ public class RecyclerAdapter extends RecyclerView.Adapter<MainModel> {
     @Override
     public void onBindViewHolder(@NonNull MainModel holder, int position) {
         holder.recipeName.setText(recipe.get(position).getRecipeName());
-        holder.recipeImage.setImageResource(recipe.get(position).getRecipeImage());
+        try {
+            String path = holder.itemView.getContext().getFilesDir().getParent() + "/app_imageDir";
+            holder.recipeImage.setImageBitmap(loadImageFromStorage(path,recipe.get(position).getRecipeImage()));
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        //holder.recipeImage.setImageResource(Integer.getInteger(recipe.get(position).getRecipeImage()));
 
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,7 +57,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<MainModel> {
             }
         });
     }
-
+    private Bitmap loadImageFromStorage(String path,String name) throws FileNotFoundException {
+        Bitmap b;
+        File f=new File(path, name);
+        b = BitmapFactory.decodeStream(new FileInputStream(f));
+        return b;
+    }
     @Override
     public int getItemCount() {
         return recipe.size();

@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/stepsnav"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    tools:context=".RecipeActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:background="#C9F4F1EF"
+        android:clickable="false"
+        android:minHeight="?attr/actionBarSize"
+        android:textAlignment="textStart"
+        android:theme="?attr/actionBarTheme"
+        app:title="Dish Discover"
+        app:titleTextColor="@color/black"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="-1dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="620dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/recipeNameTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="georgia"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <TextView
+                android:id="@+id/ingredientsLabelTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="georgia"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Meal Nutrition Facts"
+                android:textAlignment="center" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/black" />
+
+            <EditText
+                android:id="@+id/Ingredient1"
+                android:layout_width="match_parent"
+                android:layout_height="67dp"
+                android:ems="10"
+                android:hint="Ingredient 1"
+                android:inputType="text" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/amt1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="Amount"
+                    android:inputType="number" />
+
+                <EditText
+                    android:id="@+id/unit1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="64dp"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="Unit name"
+                    android:inputType="text" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="17dp" />
+
+            <EditText
+                android:id="@+id/Ingredient2"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="Ingredient 2"
+                android:inputType="text" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="74dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/amt2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="Amount"
+                    android:inputType="number" />
+
+                <EditText
+                    android:id="@+id/unit2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="Unit Name"
+                    android:inputType="text" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="18dp" />
+
+            <EditText
+                android:id="@+id/Ingredient3"
+                android:layout_width="match_parent"
+                android:layout_height="53dp"
+                android:ems="10"
+                android:hint="Ingredient 3"
+                android:inputType="text" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/amt3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="Amount"
+                    android:inputType="number" />
+
+                <EditText
+                    android:id="@+id/unit3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="Unit Name"
+                    android:inputType="text" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="27dp" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="23dp"
+                android:layout_weight="1" />
+
+            <EditText
+                android:id="@+id/Ingredient4"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:ems="10"
+                android:hint="Ingredient 4"
+                android:inputType="text" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="66dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/amt4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="Amount"
+                    android:inputType="number" />
+
+                <EditText
+                    android:id="@+id/unit4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="66dp"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="Unit Name"
+                    android:inputType="text" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="16dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="51dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/PreviousAddRecipe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Previous" />
+
+        <Button
+            android:id="@+id/HomeAddRecipe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Home" />
+
+        <Button
+            android:id="@+id/NextAddRecipe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Next" />
+
+    </LinearLayout>
+
+    <!-- Add a separator or divider between recipe name and ingredients -->
+
+    <!-- TextView to display the "Ingredients" label -->
+
+    <!-- Use a RecyclerView or a LinearLayout to dynamically display ingredients -->
+
+
+</LinearLayout>

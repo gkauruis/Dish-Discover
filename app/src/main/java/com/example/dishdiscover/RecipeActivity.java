@@ -50,7 +50,7 @@ public class RecipeActivity extends AppCompatActivity{
 //
         ingredientsListView.setAdapter(arrayAdapter);
 
-        Button home = findViewById(R.id.homeview);
+
         Button buttonOne = findViewById(R.id.stepsview);
 
         buttonOne.setOnClickListener(new View.OnClickListener() {
@@ -59,6 +59,7 @@ public class RecipeActivity extends AppCompatActivity{
                 OnStepsClicked(recipe);
             }
         });
+        Button home = findViewById(R.id.homeview);
         home.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 System.out.println("Button Clicked");
