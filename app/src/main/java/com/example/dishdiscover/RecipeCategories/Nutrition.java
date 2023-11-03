@@ -7,7 +7,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-class Nutrition implements Parcelable {
+public class Nutrition implements Parcelable {
     double cal;
     double fat;
     double sugar;
@@ -23,7 +23,18 @@ class Nutrition implements Parcelable {
         throw new RuntimeException(e);
     }
     }
-
+    public Nutrition(double cal, double fat, double sugar, double salt){
+        this.cal = cal;
+        this.fat = fat;
+        this.sugar = sugar;
+        this.salt = salt;
+    }
+    public Nutrition() {
+            this.cal = 0;
+            this.fat = 0;
+            this.sugar = 0;
+            this.salt = 0;
+    }
     public JSONObject getNutritionJSON() throws JSONException {
         JSONObject nutrition = new JSONObject();
         nutrition.put("Calories",this.cal);

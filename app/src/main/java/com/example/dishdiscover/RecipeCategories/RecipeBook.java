@@ -15,7 +15,7 @@ import java.util.List;
 
 public class RecipeBook implements Parcelable {
     ArrayList<Recipe> book = new ArrayList<Recipe>();
-    public RecipeBook(String jsonString,android.content.res.Resources resource,String packagename) {
+    public RecipeBook(String jsonString) {
         JSONArray recipesraw;
         JSONObject recipe;
         Recipe newRecipe;
@@ -23,7 +23,7 @@ public class RecipeBook implements Parcelable {
             recipesraw = new JSONObject(jsonString).getJSONArray("Recipes");
             for (int i=0; i < recipesraw.length(); i++) {
                 recipe = recipesraw.getJSONObject(i).getJSONObject("Recipe");
-                newRecipe = new Recipe(recipe, resource,packagename);
+                newRecipe = new Recipe(recipe);
                 this.book.add(newRecipe);
             }
 

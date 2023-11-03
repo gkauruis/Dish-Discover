@@ -3,6 +3,8 @@ package com.example.dishdiscover.RecipeCategories;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONArray;
+
+import android.content.res.Resources;
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -12,7 +14,7 @@ import java.util.ArrayList;
 
 public class MealFacts implements Parcelable{
     String mealName;
-    int mealImage;
+    String mealImage;
     ArrayList<String> category = new ArrayList<String>();
     String mealDescription;
     String difficulty;
@@ -23,11 +25,11 @@ public class MealFacts implements Parcelable{
     String weburl;
     String comments;
 
-    public MealFacts(JSONObject mealFactsRaw, android.content.res.Resources resources,String packagename) {
+    public MealFacts(JSONObject mealFactsRaw) {
 
         try {
             this.mealName = mealFactsRaw.getString("MealName");
-            this.mealImage = resources.getIdentifier(mealFactsRaw.getString("MealImage"), "drawable",packagename);
+            this.mealImage = mealFactsRaw.getString("MealImage");
             this.mealDescription = mealFactsRaw.getString("MealDescription");
             this.difficulty = mealFactsRaw.getString("Difficulty");
             this.prep = mealFactsRaw.getDouble("Prep");
@@ -40,6 +42,19 @@ public class MealFacts implements Parcelable{
         } catch (JSONException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public MealFacts() {
+            this.mealName = "";
+            this.mealImage = "";
+            this.mealDescription = "";
+            this.difficulty = "";
+            this.prep = 0;
+            this.cooktime = 0;
+            this.serves = 0;
+            this.rating = 0;
+            this.weburl = "";
+            this.comments = "";
     }
 
     public JSONObject getMealFactsJSON() throws JSONException {
@@ -76,7 +91,7 @@ public class MealFacts implements Parcelable{
 
     protected MealFacts(Parcel in) {
         this.mealName = in.readString();
-        this.mealImage = in.readInt();
+        this.mealImage = in.readString();
         this.mealDescription = in.readString();
         this.difficulty = in.readString();
         this.prep = in.readDouble();
@@ -87,7 +102,7 @@ public class MealFacts implements Parcelable{
         this.comments = in.readString();
         this.category = in.readArrayList(String.class.getClassLoader());
     }
-    public int getMealImage() {
+    public String getMealImage() {
         return mealImage;
     }
 
@@ -119,7 +134,7 @@ public class MealFacts implements Parcelable{
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(mealName);
-        dest.writeInt(this.mealImage);
+        dest.writeString(this.mealImage);
         dest.writeString(this.mealDescription);
         dest.writeString(this.difficulty);
         dest.writeDouble(this.prep);

@@ -16,9 +16,9 @@ public class Recipe implements Parcelable {
     List<Step> steps = new ArrayList();
     Nutrition nutrition;
 
-    public Recipe(JSONObject newRecipe, android.content.res.Resources resources,String packagename) {
+    public Recipe(JSONObject newRecipe) {
         try {
-                setMealFacts(newRecipe.getJSONObject("MealFacts"),resources,packagename);
+                setMealFacts(newRecipe.getJSONObject("MealFacts"));
                 setIngredients(newRecipe.getJSONArray("Ingredients"));
                 setSteps(newRecipe.getJSONArray("Steps"));
                 setNutrition(newRecipe.getJSONObject("Nutrition"));
@@ -26,6 +26,11 @@ public class Recipe implements Parcelable {
             throw new RuntimeException(e);
         }
 
+    }
+
+    public Recipe(){
+        mealFacts = new MealFacts();
+        nutrition = new Nutrition();
     }
 
     protected Recipe(Parcel in) {
@@ -62,7 +67,7 @@ public class Recipe implements Parcelable {
         return recipejson;
 
     }
-    public int getRecipeImage() {
+    public String getRecipeImage() {
         return this.mealFacts.getMealImage();
     }
 
@@ -71,6 +76,9 @@ public class Recipe implements Parcelable {
         return ingredients;
     }
 
+    public void addIngredient(Ingredient ing) {
+        this.ingredients.add(ing);
+    }
     public void setIngredients(JSONArray ingredientArray) {
         Ingredient ingredient;
         for(int i=0; i<ingredientArray.length(); i++){
@@ -101,6 +109,14 @@ public class Recipe implements Parcelable {
         return steps;
     }
 
+    public void addStep(Step step){
+        if (steps.size() >= step.getNumber()) {
+            steps.set(step.getNumber() - 1, step);
+        } else {
+            steps.add(step);
+        }
+    }
+
     public Step getStep(int stepNum) {
         return steps.get(stepNum);
     }
@@ -126,7 +142,7 @@ public class Recipe implements Parcelable {
         List<Step> steps = getSteps();
         for (int i=0; i<steps.size();i++) {
             step = new JSONObject();
-            step.put("Number",steps.get(i).getNumber());
+            step.put("Number",Integer.toString(steps.get(i).getNumber()));
             step.put("Action",steps.get(i).getAction());
             step.put("StepImage",steps.get(i).getStepImage());
             steparray.put(step);
@@ -141,13 +157,15 @@ public class Recipe implements Parcelable {
         this.mealFacts = mealfacts;
     }
 
-    public void setMealFacts(JSONObject mealFactsRaw, android.content.res.Resources resources,String packagename){
-        this.mealFacts = new MealFacts(mealFactsRaw,resources,packagename);
+    public void setMealFacts(JSONObject mealFactsRaw){
+        this.mealFacts = new MealFacts(mealFactsRaw);
     }
 
     //-------------------------------------Nutrition---------------------------------------------
     public Nutrition getNutrition() {return this.nutrition;}
-
+    public void setNutrition(Nutrition nutrition){
+        this.nutrition = nutrition;
+    }
     public void setNutrition(JSONObject nutritionRaw){
         this.nutrition = new Nutrition(nutritionRaw);
     }

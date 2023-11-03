@@ -50,7 +50,7 @@
     <!-- Use a RecyclerView or a LinearLayout to dynamically display ingredients -->
 
     <EditText
-        android:id="@+id/MealName"
+        android:id="@+id/Ingredient1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -66,7 +66,7 @@
 
 
     <Button
-        android:id="@+id/addxml"
+        android:id="@+id/NextAddRecipe"
         android:layout_width="wrap_content"
         android:layout_height="63dp"
         android:text="Add XML" />

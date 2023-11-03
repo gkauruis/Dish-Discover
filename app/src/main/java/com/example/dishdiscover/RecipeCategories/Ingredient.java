@@ -43,6 +43,11 @@ public class Ingredient implements Parcelable {
 
     }
 
+    public Ingredient(String name,double amt,String unit){
+        this.name = name;
+        this.amt = amt;
+        this.unit = unit;
+    }
     public String getName() {
         return name;
     }

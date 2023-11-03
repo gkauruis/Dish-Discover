@@ -72,12 +72,12 @@ public class StepActivity extends AppCompatActivity{
             startActivity(intent);
             Toast.makeText(this, recipe.getRecipeName(), Toast.LENGTH_SHORT).show();
         }
-    public void returnHome(Recipe recipe) {
-        Intent intent = new Intent(StepActivity.this, RecipeActivity.class);
-        intent.putExtra("RECIPE", recipe);
-        startActivity(intent);
-        Toast.makeText(this, recipe.getRecipeName(), Toast.LENGTH_SHORT).show();
-    }
+        public void returnHome(Recipe recipe) {
+            Intent intent = new Intent(StepActivity.this, RecipeActivity.class);
+            intent.putExtra("RECIPE", recipe);
+            startActivity(intent);
+            Toast.makeText(this, recipe.getRecipeName(), Toast.LENGTH_SHORT).show();
+        }
     }
 
 
