@@ -9,19 +9,24 @@
     android:orientation="vertical"
     tools:context=".RecipeActivity">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         android:background="#C9F4F1EF"
-        android:clickable="false"
         android:minHeight="?attr/actionBarSize"
         android:textAlignment="textStart"
-        android:theme="?attr/actionBarTheme"
         app:title="Dish Discover"
         app:titleTextColor="@color/black"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="-1dp" />
+        app:navigationIcon="@drawable/ic_back_black"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
 
     <TextView
         android:id="@+id/recipeNameTextView"

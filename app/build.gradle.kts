@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.dishdiscover"
-        minSdk = 22
+        minSdk = 26
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -33,6 +33,11 @@ android {
     buildFeatures {
         viewBinding = true
     }
+    dependenciesInfo {
+        includeInApk = true
+        includeInBundle = true
+    }
+    buildToolsVersion = "34.0.0"
 }
 
 dependencies {

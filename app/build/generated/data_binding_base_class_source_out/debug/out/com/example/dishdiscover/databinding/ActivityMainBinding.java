@@ -4,6 +4,7 @@ package com.example.dishdiscover.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,14 +22,18 @@ public final class ActivityMainBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
+  public final Button newrecipe;
+
+  @NonNull
   public final RecyclerView recyclerView;
 
   @NonNull
   public final Toolbar toolbar;
 
-  private ActivityMainBinding(@NonNull LinearLayout rootView, @NonNull RecyclerView recyclerView,
-      @NonNull Toolbar toolbar) {
+  private ActivityMainBinding(@NonNull LinearLayout rootView, @NonNull Button newrecipe,
+      @NonNull RecyclerView recyclerView, @NonNull Toolbar toolbar) {
     this.rootView = rootView;
+    this.newrecipe = newrecipe;
     this.recyclerView = recyclerView;
     this.toolbar = toolbar;
   }
@@ -60,6 +65,12 @@ public final class ActivityMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.newrecipe;
+      Button newrecipe = ViewBindings.findChildViewById(rootView, id);
+      if (newrecipe == null) {
+        break missingId;
+      }
+
       id = R.id.recycler_view;
       RecyclerView recyclerView = ViewBindings.findChildViewById(rootView, id);
       if (recyclerView == null) {
@@ -72,7 +83,7 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMainBinding((LinearLayout) rootView, recyclerView, toolbar);
+      return new ActivityMainBinding((LinearLayout) rootView, newrecipe, recyclerView, toolbar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

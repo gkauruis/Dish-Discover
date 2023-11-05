@@ -9,19 +9,22 @@
     android:orientation="vertical"
     tools:context=".RecipeActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="409dp"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#C9F4F1EF"
-        android:clickable="false"
-        android:minHeight="?attr/actionBarSize"
-        android:textAlignment="textStart"
-        android:theme="?attr/actionBarTheme"
-        app:title="Dish Discover"
-        app:titleTextColor="@color/black"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="-1dp" />
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#C9F4F1EF"
+            app:title="Dish Discover"
+            app:titleTextColor="@color/black"
+            app:navigationIcon="@drawable/ic_back_black" />
+
+    </com.google.android.material.appbar.AppBarLayout>
 
     <TextView
         android:id="@+id/recipeNameTextView"
@@ -45,39 +48,53 @@
         android:layout_height="1dp"
         android:background="@color/black" />
 
-    <!-- TextView to display the "Ingredients" label -->
-
-    <!-- Use a RecyclerView or a LinearLayout to dynamically display ingredients -->
-
-    <TextView
-        android:id="@+id/RecipeInsruction"
+    <!-- Floating box for step display -->
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="51dp"
-        android:text="TextView" />
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        app:cardBackgroundColor="#ffffff">
 
+        <TextView
+            android:id="@+id/RecipeInsruction"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            android:text="Step Display"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- Navigation buttons with larger touch targets -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
 
-        <Button
+        <ImageButton
             android:id="@+id/prev"
-            android:layout_width="wrap_content"
-            android:layout_height="66dp"
+            android:layout_width="0dp"
+            android:layout_height="53dp"
             android:layout_weight="1"
-            android:text="Previous" />
+            android:background="@android:color/transparent"
+            android:contentDescription="Previous Step"
+            android:src="@drawable/ic_back_arrow"
+            android:alpha="1.0"
+            android:tooltipText="Go to the Previous Step" />
 
-        <Button
-            android:id="@+id/Recipe"
-            android:layout_width="121dp"
-            android:layout_height="66dp"
-            android:text="Recipe" />
+        <ImageButton
+            android:id="@+id/next"
+            android:layout_width="0dp"
+            android:layout_height="53dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:contentDescription="Next Step"
+            android:src="@drawable/ic_forward_arrow"
+            android:alpha="1.0"
+            android:tooltipText="Go to the Next Step" />
 
-        <Button
-            android:id="@+id/Next"
-            android:layout_width="139dp"
-            android:layout_height="63dp"
-            android:text="Next" />
     </LinearLayout>
-
 </LinearLayout>

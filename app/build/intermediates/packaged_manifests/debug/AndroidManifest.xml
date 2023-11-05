@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="22"
+        android:minSdkVersion="26"
         android:targetSdkVersion="34" />
 
     <permission
@@ -19,7 +19,7 @@
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:debuggable="true"
-        android:extractNativeLibs="true"
+        android:extractNativeLibs="false"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -28,9 +28,41 @@
         android:testOnly="true"
         android:theme="@style/Theme.DishDiscover" >
         <activity
+            android:name="com.example.dishdiscover.AddIngredientActivity"
+            android:exported="false"
+            android:label="AddIngredientActivity"
+            android:theme="@style/Theme.DishDiscover" />
+        <activity
+            android:name="com.example.dishdiscover.AddStepActivity"
+            android:exported="false"
+            android:label="AddStepActivity"
+            android:theme="@style/Theme.DishDiscover" />
+        <activity
+            android:name="com.example.dishdiscover.AddNutritionActivity"
+            android:exported="false"
+            android:label="AddNutritionActivity"
+            android:theme="@style/Theme.DishDiscover" />
+        <activity
+            android:name="com.example.dishdiscover.AddMealActivity"
+            android:exported="false"
+            android:label="AddMealActivity"
+            android:theme="@style/Theme.DishDiscover" />
+        <activity
+            android:name="com.example.dishdiscover.AddRecipeActivity"
+            android:exported="false"
+            android:label="AddRecipeActivity"
+            android:theme="@style/Theme.DishDiscover" />
+        <activity
+            android:name="com.example.dishdiscover.StepActivity"
+            android:exported="false"
+            android:label="StepActivity"
+            android:parentActivityName="com.example.dishdiscover.RecipeActivity"
+            android:theme="@style/Theme.DishDiscover" />
+        <activity
             android:name="com.example.dishdiscover.RecipeActivity"
             android:exported="false"
             android:label="@string/title_activity_recipe"
+            android:parentActivityName="com.example.dishdiscover.MainActivity"
             android:theme="@style/Theme.DishDiscover" />
         <activity
             android:name="com.example.dishdiscover.MainActivity"

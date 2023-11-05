@@ -4,6 +4,7 @@ package com.example.dishdiscover.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -13,6 +14,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.dishdiscover.R;
+import com.google.android.material.appbar.AppBarLayout;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -20,6 +22,12 @@ import java.lang.String;
 public final class ActivityRecipeBinding implements ViewBinding {
   @NonNull
   private final LinearLayout rootView;
+
+  @NonNull
+  public final AppBarLayout appBarLayout;
+
+  @NonNull
+  public final Button homeview;
 
   @NonNull
   public final TextView ingredientsLabelTextView;
@@ -31,15 +39,26 @@ public final class ActivityRecipeBinding implements ViewBinding {
   public final TextView recipeNameTextView;
 
   @NonNull
+  public final LinearLayout stepsnav;
+
+  @NonNull
+  public final Button stepsview;
+
+  @NonNull
   public final Toolbar toolbar;
 
-  private ActivityRecipeBinding(@NonNull LinearLayout rootView,
-      @NonNull TextView ingredientsLabelTextView, @NonNull ListView ingredientsListView,
-      @NonNull TextView recipeNameTextView, @NonNull Toolbar toolbar) {
+  private ActivityRecipeBinding(@NonNull LinearLayout rootView, @NonNull AppBarLayout appBarLayout,
+      @NonNull Button homeview, @NonNull TextView ingredientsLabelTextView,
+      @NonNull ListView ingredientsListView, @NonNull TextView recipeNameTextView,
+      @NonNull LinearLayout stepsnav, @NonNull Button stepsview, @NonNull Toolbar toolbar) {
     this.rootView = rootView;
+    this.appBarLayout = appBarLayout;
+    this.homeview = homeview;
     this.ingredientsLabelTextView = ingredientsLabelTextView;
     this.ingredientsListView = ingredientsListView;
     this.recipeNameTextView = recipeNameTextView;
+    this.stepsnav = stepsnav;
+    this.stepsview = stepsview;
     this.toolbar = toolbar;
   }
 
@@ -70,6 +89,18 @@ public final class ActivityRecipeBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.appBarLayout;
+      AppBarLayout appBarLayout = ViewBindings.findChildViewById(rootView, id);
+      if (appBarLayout == null) {
+        break missingId;
+      }
+
+      id = R.id.homeview;
+      Button homeview = ViewBindings.findChildViewById(rootView, id);
+      if (homeview == null) {
+        break missingId;
+      }
+
       id = R.id.ingredientsLabelTextView;
       TextView ingredientsLabelTextView = ViewBindings.findChildViewById(rootView, id);
       if (ingredientsLabelTextView == null) {
@@ -88,14 +119,23 @@ public final class ActivityRecipeBinding implements ViewBinding {
         break missingId;
       }
 
+      LinearLayout stepsnav = (LinearLayout) rootView;
+
+      id = R.id.stepsview;
+      Button stepsview = ViewBindings.findChildViewById(rootView, id);
+      if (stepsview == null) {
+        break missingId;
+      }
+
       id = R.id.toolbar;
       Toolbar toolbar = ViewBindings.findChildViewById(rootView, id);
       if (toolbar == null) {
         break missingId;
       }
 
-      return new ActivityRecipeBinding((LinearLayout) rootView, ingredientsLabelTextView,
-          ingredientsListView, recipeNameTextView, toolbar);
+      return new ActivityRecipeBinding((LinearLayout) rootView, appBarLayout, homeview,
+          ingredientsLabelTextView, ingredientsListView, recipeNameTextView, stepsnav, stepsview,
+          toolbar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

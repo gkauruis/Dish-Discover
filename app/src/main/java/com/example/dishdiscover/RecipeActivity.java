@@ -9,7 +9,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -34,20 +36,25 @@ public class RecipeActivity extends AppCompatActivity{
 
         TextView recipeName = findViewById(R.id.recipeNameTextView);
         recipeName.setText(recipe.getRecipeName());
-//
+
         TextView ingredientsTitle = findViewById(R.id.ingredientsLabelTextView);
         ingredientsTitle.setText("Ingredients");
-//
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
         ListView ingredientsListView = findViewById(R.id.ingredientsListView);
         ArrayList<String> ingredientsList = new ArrayList<>();
-//
+
         for (Ingredient ingredient : recipe.getIngredients()){
             String ingredientsInfo = ingredient.getAmount() + " " + ingredient.getUnit() + " " + ingredient.getName();
             ingredientsList.add(ingredientsInfo);
         }
-//
+
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, ingredientsList);
-//
+
         ingredientsListView.setAdapter(arrayAdapter);
 
 
@@ -119,6 +126,14 @@ public class RecipeActivity extends AppCompatActivity{
         Intent intent= new Intent(this, AddRecipeActivity.class);
         startActivity(intent);
 
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        finish();
+        return true;
     }
 
 

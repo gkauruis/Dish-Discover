@@ -1,18 +1,22 @@
 package com.example.dishdiscover;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.widget.Toolbar;
 
-import com.example.dishdiscover.RecipeCategories.Ingredient;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+
 import com.example.dishdiscover.RecipeCategories.Recipe;
 import com.example.dishdiscover.RecipeCategories.Step;
 
@@ -29,6 +33,11 @@ public class StepActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_steps);
 
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
         recipe = getIntent().getParcelableExtra("RECIPE");
         stepNum = getIntent().getIntExtra("STEPNUM",0);
         stepAmt = recipe.getStepAmt();
@@ -37,14 +46,18 @@ public class StepActivity extends AppCompatActivity{
         step = recipe.getStep(stepNum);
         TextView recipeStep = findViewById(R.id.RecipeInsruction);
         recipeStep.setText(step.getAction());
-        Button prev = findViewById(R.id.prev);
-        Button next = findViewById(R.id.Next);
-        Button home = findViewById(R.id.Recipe);
+        ImageButton prev = findViewById(R.id.prev);
+        ImageButton next = findViewById(R.id.next);
+
         if (stepNum == 0) {
             prev.setEnabled(false);
+            prev.setAlpha(0.3f); // Reduce button opacity
+            prev.setTooltipText(null);
         }
         if (stepNum >= stepAmt -1){
             next.setEnabled(false);
+            next.setAlpha(0.3f); // Reduce button opacity
+            next.setTooltipText(null);
         }
         prev.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -58,12 +71,6 @@ public class StepActivity extends AppCompatActivity{
                 OnStepsClicked(recipe,stepNum + 1);
             }
         });
-        home.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                System.out.println("Button Clicked");
-                returnHome(recipe);
-            }
-        });
     }
         public void OnStepsClicked(Recipe recipe,int step) {
             Intent intent = new Intent(StepActivity.this, StepActivity.class);
@@ -72,12 +79,16 @@ public class StepActivity extends AppCompatActivity{
             startActivity(intent);
             Toast.makeText(this, recipe.getRecipeName(), Toast.LENGTH_SHORT).show();
         }
-        public void returnHome(Recipe recipe) {
+
+        @Override
+        public boolean onSupportNavigateUp() {
             Intent intent = new Intent(StepActivity.this, RecipeActivity.class);
             intent.putExtra("RECIPE", recipe);
             startActivity(intent);
-            Toast.makeText(this, recipe.getRecipeName(), Toast.LENGTH_SHORT).show();
+            finish(); // Close the current StepActivity
+            return true;
         }
-    }
+
+}
 
 

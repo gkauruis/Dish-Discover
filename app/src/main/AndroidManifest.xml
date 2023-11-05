@@ -41,11 +41,13 @@
             android:name=".StepActivity"
             android:exported="false"
             android:label="StepActivity"
+            android:parentActivityName=".RecipeActivity"
             android:theme="@style/Theme.DishDiscover" />
         <activity
             android:name=".RecipeActivity"
             android:exported="false"
             android:label="@string/title_activity_recipe"
+            android:parentActivityName=".MainActivity"
             android:theme="@style/Theme.DishDiscover" />
         <activity
             android:name=".MainActivity"

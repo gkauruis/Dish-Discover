@@ -2,25 +2,31 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/stepsnav"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
     android:orientation="vertical"
     tools:context=".RecipeActivity">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         android:background="#C9F4F1EF"
-        android:clickable="false"
         android:minHeight="?attr/actionBarSize"
         android:textAlignment="textStart"
-        android:theme="?attr/actionBarTheme"
         app:title="Dish Discover"
         app:titleTextColor="@color/black"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="-1dp" />
+        app:navigationIcon="@drawable/ic_back_black"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
 
     <TextView
         android:id="@+id/recipeNameTextView"
@@ -51,6 +57,18 @@
     <ListView
         android:id="@+id/ingredientsListView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="543dp">
+
+    </ListView>
+    <Button
+        android:id="@+id/stepsview"
+        android:layout_width="wrap_content"
+        android:layout_height="63dp"
+        android:text="Steps" />
+    <Button
+        android:id="@+id/homeview"
+        android:layout_width="wrap_content"
+        android:layout_height="63dp"
+        android:text="Home" />
 
 </LinearLayout>
