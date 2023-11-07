@@ -1,12 +1,14 @@
 package com.example.dishdiscover;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -33,19 +35,19 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements SelectListener{
 
     List<Recipe> recipes = new ArrayList<Recipe>();
     String recipeJson;
-
+    RecipeBook recipeBook;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ContextWrapper cw = new ContextWrapper(getApplicationContext());
         // path to /data/data/yourapp/app_data/imageDir
-        File directory = cw.getDir("imageDir", Context.MODE_PRIVATE);
+        File directory = new File(getFilesDir(),"app_imageDir");
         // Create imageDir
         File mypath=new File(directory,"dosa.jpg");
         Bitmap meallogos;
@@ -68,7 +70,7 @@ public class MainActivity extends AppCompatActivity implements SelectListener{
         }
 
         //getResources().getIdentifier(mealImageResource, "drawable", getPackageName())
-        RecipeBook recipeBook = new RecipeBook(this.recipeJson);
+        recipeBook = new RecipeBook(this.recipeJson);
         recipes = recipeBook.getBook();
 
         recyclerView.setLayoutManager(new GridLayoutManager(MainActivity.this, 2));
@@ -80,6 +82,7 @@ public class MainActivity extends AppCompatActivity implements SelectListener{
                 OnNewRecipeClicked(recipeBook);
             }
         });
+
     }
 
     @Override
@@ -91,10 +94,8 @@ public class MainActivity extends AppCompatActivity implements SelectListener{
     }
 
     public void OnNewRecipeClicked(RecipeBook recipeBook) {
-        Intent intent = new Intent(MainActivity.this, AddMealActivity.class);
-        intent.putExtra("RECIPEBOOK",recipeBook);
-        startActivity(intent);
-        Toast.makeText(this, "Loading", Toast.LENGTH_SHORT).show();
+        requestPermissions(new String[]{android.Manifest.permission.CAMERA},200);
+
     }
     public boolean load()
     {
@@ -152,11 +153,7 @@ public class MainActivity extends AppCompatActivity implements SelectListener{
     }
 
     public void saveimage(Bitmap bitmapImage,String imageName){
-            ContextWrapper cw = new ContextWrapper(getApplicationContext());
-            // path to /data/data/yourapp/app_data/imageDir
-        //File file = getFilesDir();
-        //file = file.getParentFile();
-            File directory = cw.getDir("imageDir", Context.MODE_PRIVATE);
+            File directory = new File(getFilesDir(),"app_imageDir");
             // Create imageDir
             File mypath=new File(directory,imageName);
             FileOutputStream fos = null;
@@ -191,4 +188,17 @@ public class MainActivity extends AppCompatActivity implements SelectListener{
         return true;
     }
 
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == 200) {
+            if (!Arrays.asList(grantResults).contains(PackageManager.PERMISSION_DENIED)) {
+                Intent intent = new Intent(MainActivity.this, AddMealActivity.class);
+                intent.putExtra("RECIPEBOOK", recipeBook);
+                startActivity(intent);
+                Toast.makeText(this, "Loading", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
 }
