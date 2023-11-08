@@ -94,10 +94,8 @@ public class AddMealActivity extends AppCompatActivity{
         addImage.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 System.out.println("Button Clicked");
-
                 EditText mealName = findViewById(R.id.MealName);
                 takepicture(getContent, mealName.getText().toString() + ".jpg");
-
             }
 
         });

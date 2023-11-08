@@ -129,7 +129,7 @@
                 android:id="@+id/mealImage"
                 android:layout_width="match_parent"
                 android:layout_height="341dp"
-                app:srcCompat="@drawable/crepes" />
+                app:srcCompat="@drawable/filenotfound" />
 
             <Button
                 android:id="@+id/addNewImage"

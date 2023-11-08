@@ -43,7 +43,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<MainModel> {
             String path = holder.itemView.getContext().getFilesDir() + "/app_imageDir";
             holder.recipeImage.setImageBitmap(loadImageFromStorage(path,recipe.get(position).getRecipeImage()));
         } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
+            String path = holder.itemView.getContext().getFilesDir() + "/app_imageDir";
+            try {
+                holder.recipeImage.setImageBitmap(loadImageFromStorage(path,"filenotfound.jpg"));
+            } catch (FileNotFoundException ex) {
+                throw new RuntimeException(ex);
+            }
         }
         //holder.recipeImage.setImageResource(Integer.getInteger(recipe.get(position).getRecipeImage()));
 

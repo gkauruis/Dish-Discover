@@ -1,5 +1,7 @@
 package com.example.dishdiscover;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -20,6 +22,9 @@ import androidx.core.content.ContextCompat;
 import com.example.dishdiscover.RecipeCategories.Recipe;
 import com.example.dishdiscover.RecipeCategories.Step;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class StepActivity extends AppCompatActivity{
@@ -59,6 +64,18 @@ public class StepActivity extends AppCompatActivity{
             next.setAlpha(0.3f); // Reduce button opacity
             next.setTooltipText(null);
         }
+
+        ImageView newStepImage = findViewById(R.id.StepImage);
+        try {
+            Bitmap map = loadImageFromStorage(step.getStepImage());
+            newStepImage.setImageBitmap(map);
+        } catch (FileNotFoundException e) {
+            try {
+                newStepImage.setImageBitmap(loadImageFromStorage("filenotfound.jpg",1));
+            } catch (FileNotFoundException ex) {
+                throw new RuntimeException(ex);
+            }
+        }
         prev.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 System.out.println("Button Clicked");
@@ -88,6 +105,24 @@ public class StepActivity extends AppCompatActivity{
             finish(); // Close the current StepActivity
             return true;
         }
+
+    private Bitmap loadImageFromStorage(String name) throws FileNotFoundException {
+        File rootpath = new File(getFilesDir(),"app_imageDir");
+        File path = new File(rootpath,"stepImages");
+        path.mkdirs();
+        Bitmap b;
+        File f=new File(path, name);
+        b = BitmapFactory.decodeStream(new FileInputStream(f));
+        return b;
+    }
+    private Bitmap loadImageFromStorage(String name, int root) throws FileNotFoundException {
+        File path = new File(getFilesDir(),"app_imageDir");
+        path.mkdirs();
+        Bitmap b;
+        File f=new File(path, name);
+        b = BitmapFactory.decodeStream(new FileInputStream(f));
+        return b;
+    }
 
 }
 

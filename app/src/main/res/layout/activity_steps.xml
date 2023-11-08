@@ -49,6 +49,12 @@
         android:background="@color/black" />
 
     <!-- Floating box for step display -->
+    <ImageView
+        android:id="@+id/StepImage"
+        android:layout_width="match_parent"
+        android:layout_height="341dp"
+        app:srcCompat="@drawable/filenotfound" />
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

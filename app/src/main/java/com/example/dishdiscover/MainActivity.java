@@ -64,6 +64,11 @@ public class MainActivity extends AppCompatActivity implements SelectListener{
             meallogos = BitmapFactory.decodeResource(getResources(), R.drawable.crepes);
             saveimage(meallogos, "crepes.jpg");
         }
+        mypath=new File(directory,"filenotfound.jpg");
+        if (!mypath.exists()) {
+            meallogos = BitmapFactory.decodeResource(getResources(), R.drawable.filenotfound);
+            saveimage(meallogos, "filenotfound.jpg");
+        }
         setContentView(R.layout.activity_main);
         String jsonString;
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
