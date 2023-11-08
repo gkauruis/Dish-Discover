@@ -47,6 +47,9 @@ public class MainActivity extends AppCompatActivity implements SelectListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // path to /data/data/yourapp/app_data/imageDir
+        if (!load()) {
+            save();
+        }
         File directory = new File(getFilesDir(),"app_imageDir");
         // Create imageDir
         File mypath=new File(directory,"dosa.jpg");
@@ -65,9 +68,6 @@ public class MainActivity extends AppCompatActivity implements SelectListener{
         String jsonString;
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
 
-        if (!load()) {
-            save();
-        }
 
         //getResources().getIdentifier(mealImageResource, "drawable", getPackageName())
         recipeBook = new RecipeBook(this.recipeJson);
@@ -153,10 +153,10 @@ public class MainActivity extends AppCompatActivity implements SelectListener{
     }
 
     public void saveimage(Bitmap bitmapImage,String imageName){
-            File directory = new File(getFilesDir(),"app_imageDir");
-            // Create imageDir
-            File mypath=new File(directory,imageName);
-            FileOutputStream fos = null;
+        File projDir = new File(getFilesDir(),"app_imageDir");
+        Boolean done = projDir.mkdirs();
+        File mypath=new File(projDir,imageName);
+        FileOutputStream fos = null;
             try {
                 fos = new FileOutputStream(mypath);
                 // Use the compress method on the BitMap object to write image to the OutputStream
