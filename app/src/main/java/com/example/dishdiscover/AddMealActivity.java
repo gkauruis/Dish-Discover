@@ -87,6 +87,8 @@ public class AddMealActivity extends AppCompatActivity{
     public void addMeal() throws JSONException {
         MealFacts newMeal;
         recipe = new Recipe();
+        boolean valid = true;
+        String er = "Field required";
         JSONObject mealfacts = new JSONObject();
         EditText mealName = findViewById(R.id.MealName);
         EditText mealDescription = findViewById(R.id.Description);
@@ -107,27 +109,67 @@ public class AddMealActivity extends AppCompatActivity{
             diff = "Easy";
         }
 
-        mealfacts.put("MealName",mealName.getText());
-        mealfacts.put("MealDescription",mealDescription.getText());
+        if(mealName.length() == 0) {
+            mealName.setError(er);
+            valid = false;
+        } else {
+            mealfacts.put("MealName", mealName.getText());
+        }
+        if(mealDescription.length() == 0) {
+            mealDescription.setError(er);
+            valid = false;
+        } else {
+            mealfacts.put("MealDescription", mealDescription.getText());
+        }
         mealfacts.put("Difficulty",diff);
-        mealfacts.put("Prep",Integer.parseInt(mealPrep.getText().toString()));
-        mealfacts.put("Cooktime",Integer.parseInt(mealCooktime.getText().toString()));
-        mealfacts.put("Serves",Integer.parseInt(serves.getText().toString()));
-        mealfacts.put("Rating",Integer.parseInt(rating.getText().toString()));
-        mealfacts.put("Weburl",mealUrl.getText());
-        mealfacts.put("Comments",mealComment.getText() );
+        if(mealPrep.length() == 0) {
+            mealPrep.setError(er);
+            valid = false;
+        } else {
+            mealfacts.put("Prep", Integer.parseInt(mealPrep.getText().toString()));
+        }
+        if(mealCooktime.length() == 0) {
+            mealCooktime.setError(er);
+            valid = false;
+        } else {
+            mealfacts.put("Cooktime", Integer.parseInt(mealCooktime.getText().toString()));
+        }
+        if(serves.length() == 0) {
+            serves.setError(er);
+            valid = false;
+        } else {
+            mealfacts.put("Serves", Integer.parseInt(serves.getText().toString()));
+        }
+        if(rating.length() == 0) {
+            mealfacts.put("Rating", 1);
+        } else {
+            mealfacts.put("Rating", Integer.parseInt(rating.getText().toString()));
+        }
+        if(mealUrl.length() == 0) {
+            mealfacts.put("Weburl","none");
+        } else {
+            mealfacts.put("Weburl", mealUrl.getText());
+        }
+        if(mealComment.length() == 0) {
+            mealfacts.put("Comments","None");
+        } else {
+            mealfacts.put("Comments", mealComment.getText());
+        }
         mealfacts.put("MealImage","dosa.jpg");
         JSONArray cat = new JSONArray();
         cat.put(category.getText());
         mealfacts.put("Category",cat);
 
-        newMeal = new MealFacts(mealfacts);
-        recipe.setMealFacts(newMeal);
 
-        Intent intent = new Intent(AddMealActivity.this,AddNutritionActivity.class);
-        intent.putExtra("RECIPE", recipe);
-        intent.putExtra("RECIPEBOOK", recipeBook);
-        startActivity(intent);
+        if(valid) {
+            newMeal = new MealFacts(mealfacts);
+            recipe.setMealFacts(newMeal);
+
+            Intent intent = new Intent(AddMealActivity.this, AddNutritionActivity.class);
+            intent.putExtra("RECIPE", recipe);
+            intent.putExtra("RECIPEBOOK", recipeBook);
+            startActivity(intent);
+        }
     }
 
     public void OnHomeClicked(){

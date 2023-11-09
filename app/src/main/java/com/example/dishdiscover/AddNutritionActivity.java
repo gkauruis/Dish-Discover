@@ -117,6 +117,18 @@ public class AddNutritionActivity extends AppCompatActivity{
         EditText sugar = findViewById(R.id.Sugar);
         EditText salt = findViewById(R.id.Salt);
         EditText fat = findViewById(R.id.Fat);
+        if(cal.length() == 0) {
+            cal.setText("0");
+        }
+        if(sugar.length() == 0) {
+            sugar.setText("0");
+        }
+        if(salt.length() == 0) {
+            salt.setText("0");
+        }
+        if(fat.length() == 0) {
+            fat.setText("0");
+        }
         newNutrition = new Nutrition(Integer.parseInt(cal.getText().toString()),
                 Integer.parseInt(fat.getText().toString()),
                 Integer.parseInt(sugar.getText().toString()),
