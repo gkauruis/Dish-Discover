@@ -2,13 +2,22 @@ package com.example.dishdiscover;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.FileProvider;
 
 import com.example.dishdiscover.RecipeCategories.Step;
 import com.example.dishdiscover.RecipeCategories.Recipe;
@@ -18,6 +27,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
@@ -35,7 +46,7 @@ public class AddStepActivity extends AppCompatActivity{
         recipeBook = getIntent().getParcelableExtra("RECIPEBOOK");
         recipe = getIntent().getParcelableExtra("RECIPE");
         stepnum = getIntent().getIntExtra("STEPNUM",1);
-        EditText steptextfield = findViewById(R.id.Stepnumber);
+        TextView steptextfield = findViewById(R.id.Stepnumber);
         steptextfield.setText(Integer.toString(stepnum));
         Button next = findViewById(R.id.nextStep);
         Button finish = findViewById(R.id.NextAddRecipe);
@@ -82,23 +93,52 @@ public class AddStepActivity extends AppCompatActivity{
             }
 
         });
+
+        ActivityResultLauncher<Uri> getContent = registerForActivityResult(
+                new ActivityResultContracts.TakePicture(),
+                new ActivityResultCallback<Boolean>() {
+                    @Override
+                    public void onActivityResult(Boolean result) {
+                        System.out.println("result");
+                        ImageView newStepImage = findViewById(R.id.newStepImage);
+                        try {
+                            Bitmap map = loadImageFromStorage(recipe.getRecipeName()+"_"+stepnum + ".jpg");
+                            newStepImage.setImageBitmap(map);
+                        } catch (FileNotFoundException e) {
+                            throw new RuntimeException(e);
+                        }
+                    }
+                }
+        );
+
+        Button addImage = findViewById(R.id.addNewStepImage);
+        addImage.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                System.out.println("Button Clicked");
+                takepicture(getContent, recipe.getRecipeName()+"_"+stepnum + ".jpg");
+            }
+
+        });
+    }
+    public void takepicture(ActivityResultLauncher<Uri> getContent, String name){
+        File filepath = new File(getFilesDir(),"app_imageDir");
+        File fileimage = new File(filepath,"stepImages");
+        fileimage.mkdirs();
+        File file = new File(fileimage,name);
+        Uri uri = FileProvider.getUriForFile(this, getApplicationContext().getPackageName() + ".provider", file);
+        getContent.launch(uri);
+
     }
 
-    public void addxml(){
-        try {
-            this.recipeJson = recipeBook.getRecipeBookJSON();
-            EditText step = findViewById(R.id.step);
-            Recipe recipe = recipeBook.getBook().get(0);
-            this.recipeJson = recipeBook.getRecipeBookJSON();
-        } catch (JSONException e) {
-            throw new RuntimeException(e);
-        }
-        save();
-        Intent intent = new Intent(AddStepActivity.this,MainActivity.class);
-        startActivity(intent);
-        Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show();
+    private Bitmap loadImageFromStorage(String name) throws FileNotFoundException {
+        File rootpath = new File(getFilesDir(),"app_imageDir");
+        File path = new File(rootpath,"stepImages");
+        path.mkdirs();
+        Bitmap b;
+        File f=new File(path, name);
+        b = BitmapFactory.decodeStream(new FileInputStream(f));
+        return b;
     }
-
     public void  save()  // SAVE
     {
         File file= null;
@@ -126,7 +166,7 @@ public class AddStepActivity extends AppCompatActivity{
         Step step = new Step();
         step.setAction(steptext.getText().toString());
         step.setNumber(stepnum);
-        step.setStepImage("placeholder");
+        step.setStepImage(recipe.getRecipeName()+"_"+stepnum + ".jpg");
         recipe.addStep(step);
         Intent intent = new Intent(AddStepActivity.this,AddStepActivity.class);
         intent.putExtra("RECIPE", recipe);
@@ -141,7 +181,7 @@ public class AddStepActivity extends AppCompatActivity{
         Step step = new Step();
         step.setAction(steptext.getText().toString());
         step.setNumber(stepnum);
-        step.setStepImage("placeholder");
+        step.setStepImage(recipe.getRecipeName()+"_"+stepnum + ".jpg");
         recipe.addStep(step);
         recipeBook.addRecipe(recipe);
         save();

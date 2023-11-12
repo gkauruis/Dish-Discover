@@ -55,12 +55,14 @@
                 android:text="Meal Step"
                 android:textAlignment="center" />
 
-            <EditText
+            <TextView
                 android:id="@+id/Stepnumber"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="37dp"
                 android:ems="10"
-                android:inputType="number" />
+                android:inputType="number"
+                android:text="1"
+                android:textAlignment="center" />
 
             <View
                 android:layout_width="match_parent"
@@ -71,6 +73,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="17dp" />
 
+            <ImageView
+                android:id="@+id/newStepImage"
+                android:layout_width="match_parent"
+                android:layout_height="341dp"
+                app:srcCompat="@drawable/filenotfound" />
+
+            <Button
+                android:id="@+id/addNewStepImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add Step Image" />
             <EditText
                 android:id="@+id/step"
                 android:layout_width="match_parent"
