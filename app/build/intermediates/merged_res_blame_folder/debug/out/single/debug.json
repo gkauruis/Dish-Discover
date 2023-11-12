@@ -4,147 +4,135 @@
         "source": "com.example.dishdiscover.app-main-46:/drawable/ic_back_arrow.xml"
     },
     {
-        "merged": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-merged_res-44:\\mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-main-46:\\mipmap-xxhdpi\\ic_launcher.webp"
+        "merged": "com.example.dishdiscover.app-merged_res-44:/layout_activity_addstep.xml.flat",
+        "source": "com.example.dishdiscover.app-main-46:/layout/activity_addstep.xml"
     },
     {
-        "merged": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-merged_res-44:\\layout_activity_addstep.xml.flat",
-        "source": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-main-46:\\layout\\activity_addstep.xml"
+        "merged": "com.example.dishdiscover.app-merged_res-44:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.dishdiscover.app-main-46:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
-        "merged": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-merged_res-44:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-main-46:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+        "merged": "com.example.dishdiscover.app-merged_res-44:/layout_content_recipe.xml.flat",
+        "source": "com.example.dishdiscover.app-main-46:/layout/content_recipe.xml"
     },
     {
-        "merged": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-merged_res-44:\\drawable_ic_forward_arrow.xml.flat",
-        "source": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-main-46:\\drawable\\ic_forward_arrow.xml"
+        "merged": "com.example.dishdiscover.app-merged_res-44:/layout_activity_main.xml.flat",
+        "source": "com.example.dishdiscover.app-main-46:/layout/activity_main.xml"
     },
     {
-        "merged": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-merged_res-44:\\mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-main-46:\\mipmap-hdpi\\ic_launcher_round.webp"
+        "merged": "com.example.dishdiscover.app-merged_res-44:/navigation_nav_graph.xml.flat",
+        "source": "com.example.dishdiscover.app-main-46:/navigation/nav_graph.xml"
     },
     {
-        "merged": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-merged_res-44:\\drawable_background.jpg.flat",
-        "source": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-main-46:\\drawable\\background.jpg"
+        "merged": "com.example.dishdiscover.app-merged_res-44:/xml_data_extraction_rules.xml.flat",
+        "source": "com.example.dishdiscover.app-main-46:/xml/data_extraction_rules.xml"
     },
     {
-        "merged": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-merged_res-44:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-main-46:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+        "merged": "com.example.dishdiscover.app-merged_res-44:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.dishdiscover.app-main-46:/mipmap-xxxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-merged_res-44:\\layout_activity_addmeal.xml.flat",
-        "source": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-main-46:\\layout\\activity_addmeal.xml"
+        "merged": "com.example.dishdiscover.app-merged_res-44:/layout_activity_addnutrition.xml.flat",
+        "source": "com.example.dishdiscover.app-main-46:/layout/activity_addnutrition.xml"
     },
     {
-        "merged": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-merged_res-44:\\drawable_baseline_add_24.xml.flat",
-        "source": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-main-46:\\drawable\\baseline_add_24.xml"
+        "merged": "com.example.dishdiscover.app-merged_res-44:/drawable_ic_back_black.xml.flat",
+        "source": "com.example.dishdiscover.app-main-46:/drawable/ic_back_black.xml"
     },
     {
-        "merged": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-merged_res-44:\\layout_activity_steps.xml.flat",
-        "source": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-main-46:\\layout\\activity_steps.xml"
+        "merged": "com.example.dishdiscover.app-merged_res-44:/layout_activity_addrecipe.xml.flat",
+        "source": "com.example.dishdiscover.app-main-46:/layout/activity_addrecipe.xml"
     },
     {
-        "merged": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-merged_res-44:\\mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-main-46:\\mipmap-xhdpi\\ic_launcher.webp"
+        "merged": "com.example.dishdiscover.app-merged_res-44:/drawable_background.jpg.flat",
+        "source": "com.example.dishdiscover.app-main-46:/drawable/background.jpg"
     },
     {
-        "merged": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-merged_res-44:\\layout_activity_main.xml.flat",
-        "source": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-main-46:\\layout\\activity_main.xml"
+        "merged": "com.example.dishdiscover.app-merged_res-44:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.dishdiscover.app-main-46:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.dishdiscover.app-merged_res-44:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.example.dishdiscover.app-main-46:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.dishdiscover.app-merged_res-44:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.dishdiscover.app-main-46:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.dishdiscover.app-merged_res-44:/layout_activity_addingredient.xml.flat",
+        "source": "com.example.dishdiscover.app-main-46:/layout/activity_addingredient.xml"
     },
     {
         "merged": "com.example.dishdiscover.app-merged_res-44:/layout_activity_steps.xml.flat",
         "source": "com.example.dishdiscover.app-main-46:/layout/activity_steps.xml"
     },
     {
-        "merged": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-merged_res-44:\\mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-main-46:\\mipmap-mdpi\\ic_launcher.webp"
+        "merged": "com.example.dishdiscover.app-merged_res-44:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.dishdiscover.app-main-46:/mipmap-mdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-merged_res-44:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-main-46:\\mipmap-anydpi-v26\\ic_launcher.xml"
+        "merged": "com.example.dishdiscover.app-merged_res-44:/xml_backup_rules.xml.flat",
+        "source": "com.example.dishdiscover.app-main-46:/xml/backup_rules.xml"
     },
     {
-        "merged": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-merged_res-44:\\layout_activity_recipe.xml.flat",
-        "source": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-main-46:\\layout\\activity_recipe.xml"
+        "merged": "com.example.dishdiscover.app-merged_res-44:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.example.dishdiscover.app-main-46:/drawable/ic_launcher_background.xml"
     },
     {
-        "merged": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-merged_res-44:\\drawable_ic_back_arrow.xml.flat",
-        "source": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-main-46:\\drawable\\ic_back_arrow.xml"
+        "merged": "com.example.dishdiscover.app-merged_res-44:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.dishdiscover.app-main-46:/mipmap-xxxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-merged_res-44:\\mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-main-46:\\mipmap-mdpi\\ic_launcher_round.webp"
+        "merged": "com.example.dishdiscover.app-merged_res-44:/drawable_baseline_add_24.xml.flat",
+        "source": "com.example.dishdiscover.app-main-46:/drawable/baseline_add_24.xml"
     },
     {
-        "merged": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-merged_res-44:\\xml_backup_rules.xml.flat",
-        "source": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-main-46:\\xml\\backup_rules.xml"
+        "merged": "com.example.dishdiscover.app-merged_res-44:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.dishdiscover.app-main-46:/mipmap-hdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-merged_res-44:\\layout_activity_addnutrition.xml.flat",
-        "source": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-main-46:\\layout\\activity_addnutrition.xml"
+        "merged": "com.example.dishdiscover.app-merged_res-44:/drawable_dosa.jpg.flat",
+        "source": "com.example.dishdiscover.app-main-46:/drawable/dosa.jpg"
     },
     {
-        "merged": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-merged_res-44:\\layout_activity_addingredient.xml.flat",
-        "source": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-main-46:\\layout\\activity_addingredient.xml"
+        "merged": "com.example.dishdiscover.app-merged_res-44:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.dishdiscover.app-main-46:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
-        "merged": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-merged_res-44:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-main-46:\\mipmap-xxxhdpi\\ic_launcher.webp"
+        "merged": "com.example.dishdiscover.app-merged_res-44:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.example.dishdiscover.app-main-46:/mipmap-hdpi/ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-merged_res-44:\\drawable_ic_launcher_background.xml.flat",
-        "source": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-main-46:\\drawable\\ic_launcher_background.xml"
+        "merged": "com.example.dishdiscover.app-merged_res-44:/layout_activity_recipe.xml.flat",
+        "source": "com.example.dishdiscover.app-main-46:/layout/activity_recipe.xml"
     },
     {
-        "merged": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-merged_res-44:\\drawable-v24_ic_launcher_foreground.xml.flat",
-        "source": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-main-46:\\drawable-v24\\ic_launcher_foreground.xml"
+        "merged": "com.example.dishdiscover.app-merged_res-44:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.dishdiscover.app-main-46:/mipmap-xxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-merged_res-44:\\layout_row_data_recepies.xml.flat",
-        "source": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-main-46:\\layout\\row_data_recepies.xml"
+        "merged": "com.example.dishdiscover.app-merged_res-44:/drawable_crepes.jpg.flat",
+        "source": "com.example.dishdiscover.app-main-46:/drawable/crepes.jpg"
     },
     {
-        "merged": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-merged_res-44:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-main-46:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+        "merged": "com.example.dishdiscover.app-merged_res-44:/drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "com.example.dishdiscover.app-main-46:/drawable-v24/ic_launcher_foreground.xml"
     },
     {
-        "merged": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-merged_res-44:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-main-46:\\mipmap-xhdpi\\ic_launcher_round.webp"
+        "merged": "com.example.dishdiscover.app-merged_res-44:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.example.dishdiscover.app-main-46:/mipmap-xhdpi/ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-merged_res-44:\\xml_data_extraction_rules.xml.flat",
-        "source": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-main-46:\\xml\\data_extraction_rules.xml"
-    },
-    {
-        "merged": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-merged_res-44:\\navigation_nav_graph.xml.flat",
-        "source": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-main-46:\\navigation\\nav_graph.xml"
+        "merged": "com.example.dishdiscover.app-merged_res-44:/layout_activity_addmeal.xml.flat",
+        "source": "com.example.dishdiscover.app-main-46:/layout/activity_addmeal.xml"
     },
     {
         "merged": "com.example.dishdiscover.app-merged_res-44:/drawable_ic_forward_arrow.xml.flat",
         "source": "com.example.dishdiscover.app-main-46:/drawable/ic_forward_arrow.xml"
     },
     {
-        "merged": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-merged_res-44:\\drawable_ic_back_black.xml.flat",
-        "source": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-main-46:\\drawable\\ic_back_black.xml"
-    },
-    {
-        "merged": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-merged_res-44:\\layout_activity_addrecipe.xml.flat",
-        "source": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-main-46:\\layout\\activity_addrecipe.xml"
-    },
-    {
-        "merged": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-merged_res-44:\\drawable_dosa.jpg.flat",
-        "source": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-main-46:\\drawable\\dosa.jpg"
-    },
-    {
-        "merged": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-merged_res-44:\\drawable_crepes.jpg.flat",
-        "source": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-main-46:\\drawable\\crepes.jpg"
-    },
-    {
-        "merged": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-merged_res-44:\\layout_content_recipe.xml.flat",
-        "source": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-main-46:\\layout\\content_recipe.xml"
-    },
-    {
-        "merged": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-merged_res-44:\\mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-main-46:\\mipmap-hdpi\\ic_launcher.webp"
+        "merged": "com.example.dishdiscover.app-merged_res-44:/layout_row_data_recepies.xml.flat",
+        "source": "com.example.dishdiscover.app-main-46:/layout/row_data_recepies.xml"
     }
 ]

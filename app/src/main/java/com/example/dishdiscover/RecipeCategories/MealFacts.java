@@ -116,6 +116,37 @@ public class MealFacts implements Parcelable{
     public void setMealDescription(String desc){
         this.mealDescription = desc;
     }
+
+    public String getMealDescription() { return this.mealDescription; }
+
+    public void setDifficulty(String diff) { this.difficulty = diff; }
+
+    public String getDifficulty() { return this.difficulty; }
+
+    public void setPrep(double prep) { this.prep = prep; }
+
+    public double getPrep() { return this.prep; }
+
+    public void setCooktime(double time) { this.cooktime = time; }
+
+    public double getCooktime() { return this.cooktime; }
+
+    public void setServes(int serves) { this.serves = serves; }
+
+    public int getServes() { return this.serves; }
+
+    public void setRating(double rating) { this.rating = rating; }
+
+    public double getRating() { return this.rating; }
+
+    public void setWeburl(String url) { this.weburl = url; }
+
+    public String getWeburl() { return this.weburl; }
+
+    public void setComments(String comments) { this.comments = comments; }
+
+    public String getComments() { return this.comments; }
+
     public void setCategory(JSONArray cat) {
         try {
             for (int i=0;i<cat.length();i++){
@@ -123,6 +154,14 @@ public class MealFacts implements Parcelable{
             }
         } catch (JSONException e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    public boolean exists() {
+        if(mealName != "") {
+            return true;
+        } else {
+            return false;
         }
     }
 

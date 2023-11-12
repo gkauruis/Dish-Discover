@@ -1,46 +1,42 @@
 [
     {
-        "merged": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-mergeDebugResources-43:\\layout\\activity_addnutrition.xml",
-        "source": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-main-46:\\layout\\activity_addnutrition.xml"
-    },
-    {
-        "merged": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-mergeDebugResources-43:\\layout\\activity_recipe.xml",
-        "source": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-main-46:\\layout\\activity_recipe.xml"
-    },
-    {
-        "merged": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-mergeDebugResources-43:\\layout\\activity_addstep.xml",
-        "source": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-main-46:\\layout\\activity_addstep.xml"
-    },
-    {
-        "merged": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-mergeDebugResources-43:\\layout\\activity_addmeal.xml",
-        "source": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-main-46:\\layout\\activity_addmeal.xml"
-    },
-    {
-        "merged": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-mergeDebugResources-43:\\layout\\activity_addrecipe.xml",
-        "source": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-main-46:\\layout\\activity_addrecipe.xml"
+        "merged": "com.example.dishdiscover.app-mergeDebugResources-43:/layout/row_data_recepies.xml",
+        "source": "com.example.dishdiscover.app-main-46:/layout/row_data_recepies.xml"
     },
     {
         "merged": "com.example.dishdiscover.app-mergeDebugResources-43:/layout/activity_steps.xml",
         "source": "com.example.dishdiscover.app-main-46:/layout/activity_steps.xml"
     },
     {
-        "merged": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-mergeDebugResources-43:\\layout\\activity_steps.xml",
-        "source": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-main-46:\\layout\\activity_steps.xml"
+        "merged": "com.example.dishdiscover.app-mergeDebugResources-43:/layout/activity_addingredient.xml",
+        "source": "com.example.dishdiscover.app-main-46:/layout/activity_addingredient.xml"
     },
     {
-        "merged": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-mergeDebugResources-43:\\layout\\activity_main.xml",
-        "source": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-main-46:\\layout\\activity_main.xml"
+        "merged": "com.example.dishdiscover.app-mergeDebugResources-43:/layout/activity_addrecipe.xml",
+        "source": "com.example.dishdiscover.app-main-46:/layout/activity_addrecipe.xml"
     },
     {
-        "merged": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-mergeDebugResources-43:\\layout\\row_data_recepies.xml",
-        "source": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-main-46:\\layout\\row_data_recepies.xml"
+        "merged": "com.example.dishdiscover.app-mergeDebugResources-43:/layout/activity_addnutrition.xml",
+        "source": "com.example.dishdiscover.app-main-46:/layout/activity_addnutrition.xml"
     },
     {
-        "merged": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-mergeDebugResources-43:\\layout\\content_recipe.xml",
-        "source": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-main-46:\\layout\\content_recipe.xml"
+        "merged": "com.example.dishdiscover.app-mergeDebugResources-43:/layout/activity_recipe.xml",
+        "source": "com.example.dishdiscover.app-main-46:/layout/activity_recipe.xml"
     },
     {
-        "merged": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-mergeDebugResources-43:\\layout\\activity_addingredient.xml",
-        "source": "C:\\Users\\gurle\\.gradle\\daemon\\8.0\\com.example.dishdiscover.app-main-46:\\layout\\activity_addingredient.xml"
+        "merged": "com.example.dishdiscover.app-mergeDebugResources-43:/layout/activity_addstep.xml",
+        "source": "com.example.dishdiscover.app-main-46:/layout/activity_addstep.xml"
+    },
+    {
+        "merged": "com.example.dishdiscover.app-mergeDebugResources-43:/layout/activity_addmeal.xml",
+        "source": "com.example.dishdiscover.app-main-46:/layout/activity_addmeal.xml"
+    },
+    {
+        "merged": "com.example.dishdiscover.app-mergeDebugResources-43:/layout/activity_main.xml",
+        "source": "com.example.dishdiscover.app-main-46:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.dishdiscover.app-mergeDebugResources-43:/layout/content_recipe.xml",
+        "source": "com.example.dishdiscover.app-main-46:/layout/content_recipe.xml"
     }
 ]

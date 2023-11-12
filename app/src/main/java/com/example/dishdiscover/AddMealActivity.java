@@ -41,6 +41,7 @@ public class AddMealActivity extends AppCompatActivity{
         }
 
         Button next = findViewById(R.id.NextAddRecipe);
+
         next.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 System.out.println("Button Clicked");
@@ -86,10 +87,12 @@ public class AddMealActivity extends AppCompatActivity{
     }
     public void addMeal() throws JSONException {
         MealFacts newMeal;
-        recipe = new Recipe();
         boolean valid = true;
         String er = "Field required";
         JSONObject mealfacts = new JSONObject();
+        if(recipe == null) {
+            recipe = new Recipe();
+        }
         EditText mealName = findViewById(R.id.MealName);
         EditText mealDescription = findViewById(R.id.Description);
         EditText mealUrl = findViewById(R.id.url);
@@ -101,6 +104,7 @@ public class AddMealActivity extends AppCompatActivity{
         EditText serves = findViewById(R.id.Serves);
         EditText rating = findViewById(R.id.Rating);
         String diff;
+
         if (difficulty.getCheckedRadioButtonId() ==  R.id.Hard) {
             diff = "Hard";
         } else if (difficulty.getCheckedRadioButtonId() ==  R.id.Medium) {
