@@ -39,6 +39,32 @@ public class AddMealActivity extends AppCompatActivity{
         } catch (Exception e) {
             recipe = new Recipe();
         }
+        if(recipe == null) {
+            recipe = new Recipe();
+        }
+
+        if(recipe.getMealFacts().exists()) {
+            EditText mealName = findViewById(R.id.MealName);
+            mealName.setText(recipe.getMealFacts().getMealName());
+            EditText mealDescription = findViewById(R.id.Description);
+            mealDescription.setText(recipe.getMealFacts().getMealDescription());
+            EditText mealUrl = findViewById(R.id.url);
+            mealUrl.setText(recipe.getMealFacts().getWeburl());
+            EditText mealComment = findViewById(R.id.Comment);
+            mealComment.setText(recipe.getMealFacts().getComments());
+            EditText mealPrep = findViewById(R.id.Prep);
+            mealPrep.setText(String.valueOf(recipe.getMealFacts().getPrep()));
+            EditText mealCooktime = findViewById(R.id.Cooktime);
+            mealCooktime.setText(String.valueOf(recipe.getMealFacts().getCooktime()));
+            //RadioGroup difficulty = findViewById(R.id.Difficutly);
+
+            //EditText category = findViewById(R.id.Category);
+
+            EditText serves = findViewById(R.id.Serves);
+            serves.setText(String.valueOf(recipe.getMealFacts().getServes()));
+            EditText rating = findViewById(R.id.Rating);
+            rating.setText(String.valueOf(recipe.getMealFacts().getRating()));
+        }
 
         Button next = findViewById(R.id.NextAddRecipe);
 
@@ -150,12 +176,12 @@ public class AddMealActivity extends AppCompatActivity{
             mealfacts.put("Rating", Integer.parseInt(rating.getText().toString()));
         }
         if(mealUrl.length() == 0) {
-            mealfacts.put("Weburl","none");
+            mealfacts.put("Weburl","Add URL");
         } else {
             mealfacts.put("Weburl", mealUrl.getText());
         }
         if(mealComment.length() == 0) {
-            mealfacts.put("Comments","None");
+            mealfacts.put("Comments","Add Comments");
         } else {
             mealfacts.put("Comments", mealComment.getText());
         }

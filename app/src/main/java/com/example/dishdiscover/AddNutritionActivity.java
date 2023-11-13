@@ -40,6 +40,17 @@ public class AddNutritionActivity extends AppCompatActivity{
         recipe = getIntent().getParcelableExtra("RECIPE");
 
         Button next = findViewById(R.id.NextAddRecipe);
+
+        /*if(recipe.getNutrition().exists()) {
+            EditText cal = findViewById(R.id.Calories);
+            cal.setText(String.valueOf(recipe.getNutrition().getCal()));
+            EditText sugar = findViewById(R.id.Sugar);
+            sugar.setText(String.valueOf(recipe.getNutrition().getSugar()));
+            EditText salt = findViewById(R.id.Salt);
+            salt.setText(String.valueOf(recipe.getNutrition().getSalt()));
+            EditText fat = findViewById(R.id.Fat);
+            fat.setText(String.valueOf(recipe.getNutrition().getFat()));
+        }*/
         next.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 System.out.println("Button Clicked");
