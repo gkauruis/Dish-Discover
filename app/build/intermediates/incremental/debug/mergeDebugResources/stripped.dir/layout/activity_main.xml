@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:background="#C9F4F1EF"
+        android:clickable="false"
+        android:minHeight="?attr/actionBarSize"
+        android:textAlignment="textStart"
+        android:theme="?attr/actionBarTheme"
+        app:title="Dish Discover"
+        app:titleTextColor="@color/black"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="-1dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="617dp" />
+
+    <Button
+        android:id="@+id/newrecipe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add New Recipe" />
+
+</LinearLayout>
