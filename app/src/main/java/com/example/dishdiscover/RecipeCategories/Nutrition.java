@@ -61,7 +61,7 @@ public class Nutrition implements Parcelable {
     public double getSalt() { return this.salt; }
 
     public boolean exists() {
-        if(this == null) {
+        if(cal == 0) {
             return false;
         } else {
             return true;

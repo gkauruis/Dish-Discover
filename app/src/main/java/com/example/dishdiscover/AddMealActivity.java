@@ -156,24 +156,24 @@ public class AddMealActivity extends AppCompatActivity{
             mealPrep.setError(er);
             valid = false;
         } else {
-            mealfacts.put("Prep", Integer.parseInt(mealPrep.getText().toString()));
+            mealfacts.put("Prep", Double.parseDouble(mealPrep.getText().toString()));
         }
         if(mealCooktime.length() == 0) {
             mealCooktime.setError(er);
             valid = false;
         } else {
-            mealfacts.put("Cooktime", Integer.parseInt(mealCooktime.getText().toString()));
+            mealfacts.put("Cooktime", Double.parseDouble(mealCooktime.getText().toString()));
         }
         if(serves.length() == 0) {
             serves.setError(er);
             valid = false;
         } else {
-            mealfacts.put("Serves", Integer.parseInt(serves.getText().toString()));
+            mealfacts.put("Serves", Double.parseDouble(serves.getText().toString()));
         }
         if(rating.length() == 0) {
             mealfacts.put("Rating", 1);
         } else {
-            mealfacts.put("Rating", Integer.parseInt(rating.getText().toString()));
+            mealfacts.put("Rating", Double.parseDouble(rating.getText().toString()));
         }
         if(mealUrl.length() == 0) {
             mealfacts.put("Weburl","Add URL");
