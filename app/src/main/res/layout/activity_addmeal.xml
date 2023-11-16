@@ -125,6 +125,18 @@
 
             </RadioGroup>
 
+            <ImageView
+                android:id="@+id/mealImage"
+                android:layout_width="match_parent"
+                android:layout_height="341dp"
+                app:srcCompat="@drawable/filenotfound" />
+
+            <Button
+                android:id="@+id/addNewImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add Meal Image" />
+
             <Space
                 android:layout_width="wrap_content"
                 android:layout_height="23dp"
