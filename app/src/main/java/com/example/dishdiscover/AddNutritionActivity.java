@@ -140,7 +140,7 @@ public class AddNutritionActivity extends AppCompatActivity{
         if(fat.length() == 0) {
             fat.setText("0");
         }
-        newNutrition = new Nutrition(Integer.parseInt(cal.getText().toString()),
+        newNutrition = new Nutrition(Double.parseDouble(cal.getText().toString()),
                 Double.parseDouble(fat.getText().toString()),
                 Double.parseDouble(sugar.getText().toString()),
                 Double.parseDouble(salt.getText().toString()));
