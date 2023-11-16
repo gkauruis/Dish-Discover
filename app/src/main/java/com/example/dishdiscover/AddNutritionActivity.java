@@ -40,6 +40,17 @@ public class AddNutritionActivity extends AppCompatActivity{
         recipe = getIntent().getParcelableExtra("RECIPE");
 
         Button next = findViewById(R.id.NextAddRecipe);
+
+        if(recipe.getNutrition().exists()) {
+            EditText cal = findViewById(R.id.Calories);
+            cal.setText(String.valueOf(recipe.getNutrition().getCal()));
+            EditText sugar = findViewById(R.id.Sugar);
+            sugar.setText(String.valueOf(recipe.getNutrition().getSugar()));
+            EditText salt = findViewById(R.id.Salt);
+            salt.setText(String.valueOf(recipe.getNutrition().getSalt()));
+            EditText fat = findViewById(R.id.Fat);
+            fat.setText(String.valueOf(recipe.getNutrition().getFat()));
+        }
         next.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 System.out.println("Button Clicked");
@@ -117,10 +128,22 @@ public class AddNutritionActivity extends AppCompatActivity{
         EditText sugar = findViewById(R.id.Sugar);
         EditText salt = findViewById(R.id.Salt);
         EditText fat = findViewById(R.id.Fat);
-        newNutrition = new Nutrition(Integer.parseInt(cal.getText().toString()),
-                Integer.parseInt(fat.getText().toString()),
-                Integer.parseInt(sugar.getText().toString()),
-                Integer.parseInt(salt.getText().toString()));
+        if(cal.length() == 0) {
+            cal.setText("1");
+        }
+        if(sugar.length() == 0) {
+            sugar.setText("0");
+        }
+        if(salt.length() == 0) {
+            salt.setText("0");
+        }
+        if(fat.length() == 0) {
+            fat.setText("0");
+        }
+        newNutrition = new Nutrition(Double.parseDouble(cal.getText().toString()),
+                Double.parseDouble(fat.getText().toString()),
+                Double.parseDouble(sugar.getText().toString()),
+                Double.parseDouble(salt.getText().toString()));
         recipe.setNutrition(newNutrition);
         Intent intent = new Intent(AddNutritionActivity.this, AddIngredientActivity.class);
         intent.putExtra("RECIPE", recipe);

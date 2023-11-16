@@ -103,6 +103,8 @@ public class AddIngredientActivity extends AppCompatActivity{
     }
     public void addNutrition() throws JSONException {
         Ingredient newIngredient;
+        boolean valid = true;
+        String er = "Field required";
         EditText ing1 = findViewById(R.id.Ingredient1);
         EditText amt1 = findViewById(R.id.amt1);
         EditText unit1 = findViewById(R.id.unit1);
@@ -115,16 +117,42 @@ public class AddIngredientActivity extends AppCompatActivity{
         EditText ing4 = findViewById(R.id.Ingredient4);
         EditText amt4 = findViewById(R.id.amt4);
         EditText unit4 = findViewById(R.id.unit4);
-        newIngredient = new Ingredient(ing1.getText().toString(),Integer.parseInt(amt1.getText().toString()),unit1.getText().toString());
-        recipe.addIngredient(newIngredient);
-        newIngredient = new Ingredient(ing2.getText().toString(),Integer.parseInt(amt2.getText().toString()),unit2.getText().toString());
-        recipe.addIngredient(newIngredient);
-        Intent intent = new Intent(AddIngredientActivity.this,AddStepActivity.class);
-        intent.putExtra("RECIPE", recipe);
-        intent.putExtra("RECIPEBOOK", recipeBook);
-        intent.putExtra("STEPNUM", 1);
-        startActivity(intent);
-        Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show();
+        if(ing1.length() == 0) {
+            ing1.setError(er);
+            valid = false;
+        }
+        if(amt1.length() == 0) {
+            amt1.setError(er);
+            valid = false;
+        }
+        if(unit1.length() == 0) {
+            unit1.setError(er);
+            valid = false;
+        }
+        if(ing2.length() == 0) {
+            ing2.setError(er);
+            valid = false;
+        }
+        if(amt2.length() == 0) {
+            amt2.setError(er);
+            valid = false;
+        }
+        if(unit2.length() == 0) {
+            unit2.setError(er);
+            valid = false;
+        }
+        if(valid) {
+            newIngredient = new Ingredient(ing1.getText().toString(), Integer.parseInt(amt1.getText().toString()), unit1.getText().toString());
+            recipe.addIngredient(newIngredient);
+            newIngredient = new Ingredient(ing2.getText().toString(), Integer.parseInt(amt2.getText().toString()), unit2.getText().toString());
+            recipe.addIngredient(newIngredient);
+            Intent intent = new Intent(AddIngredientActivity.this, AddStepActivity.class);
+            intent.putExtra("RECIPE", recipe);
+            intent.putExtra("RECIPEBOOK", recipeBook);
+            intent.putExtra("STEPNUM", 1);
+            startActivity(intent);
+            Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show();
+        }
     }
     public void OnHomeClicked(){
         Intent intent = new Intent(AddIngredientActivity.this,MainActivity.class);

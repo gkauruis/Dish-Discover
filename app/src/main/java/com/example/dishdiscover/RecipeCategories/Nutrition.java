@@ -43,6 +43,30 @@ public class Nutrition implements Parcelable {
         nutrition.put("Salt",this.salt);
         return nutrition;
     }
+
+    public void setCal(double cal) { this.cal = cal; }
+
+    public double getCal() { return this.cal; }
+
+    public void setFat(double fat) { this.fat = fat; }
+
+    public double getFat() { return this.fat; }
+
+    public void setSugar(double sugar) { this.sugar = sugar; }
+
+    public double getSugar() { return this.sugar; }
+
+    public void setSalt(double salt) { this.salt = salt; }
+
+    public double getSalt() { return this.salt; }
+
+    public boolean exists() {
+        if(cal == 0) {
+            return false;
+        } else {
+            return true;
+        }
+    }
     protected Nutrition(Parcel in) {
         cal = in.readDouble();
         fat = in.readDouble();
