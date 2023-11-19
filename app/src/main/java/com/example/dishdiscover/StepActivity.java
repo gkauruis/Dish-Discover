@@ -44,7 +44,7 @@ public class StepActivity extends AppCompatActivity{
         actionBar.setDisplayHomeAsUpEnabled(true);
 
         recipe = getIntent().getParcelableExtra("RECIPE");
-        stepNum = getIntent().getIntExtra("STEPNUM",0);
+        stepNum = getIntent().getIntExtra("STEPNUM",1);
         stepAmt = recipe.getStepAmt();
         TextView recipeName = findViewById(R.id.recipeNameTextView);
         recipeName.setText(recipe.getRecipeName());
@@ -54,12 +54,12 @@ public class StepActivity extends AppCompatActivity{
         ImageButton prev = findViewById(R.id.prev);
         ImageButton next = findViewById(R.id.next);
 
-        if (stepNum == 0) {
+        if (stepNum == 1) {
             prev.setEnabled(false);
             prev.setAlpha(0.3f); // Reduce button opacity
             prev.setTooltipText(null);
         }
-        if (stepNum >= stepAmt -1){
+        if (stepNum >= stepAmt){
             next.setEnabled(false);
             next.setAlpha(0.3f); // Reduce button opacity
             next.setTooltipText(null);

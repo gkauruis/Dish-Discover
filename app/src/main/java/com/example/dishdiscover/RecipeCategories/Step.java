@@ -10,8 +10,8 @@ public class Step implements Parcelable {
 
     public Step() {
         this.number = -1;
-        this.action = null;
-        this.stepImage = null;
+        this.action = "";
+        this.stepImage = "";
     }
 
     public Step(int number) {
