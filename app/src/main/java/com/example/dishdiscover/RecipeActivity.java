@@ -81,7 +81,7 @@ public class RecipeActivity extends AppCompatActivity{
     public void OnStepsClicked(Recipe recipe) {
         Intent intent = new Intent(RecipeActivity.this, StepActivity.class);
         intent.putExtra("RECIPE", recipe);
-        intent.putExtra("STEPNUM",0);
+        intent.putExtra("STEPNUM",1);
         startActivity(intent);
         Toast.makeText(this, recipe.getRecipeName(), Toast.LENGTH_SHORT).show();
     }
