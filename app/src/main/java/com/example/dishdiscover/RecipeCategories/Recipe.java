@@ -118,7 +118,10 @@ public class Recipe implements Parcelable {
     }
 
     public Step getStep(int stepNum) {
-        return steps.get(stepNum);
+        if (steps.size() < stepNum){
+            return new Step();
+        }
+        return steps.get(stepNum - 1);
     }
     public int getStepAmt(){return steps.size();}
     public void setSteps(JSONArray stepsRaw) {

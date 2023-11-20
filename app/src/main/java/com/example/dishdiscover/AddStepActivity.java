@@ -46,10 +46,24 @@ public class AddStepActivity extends AppCompatActivity{
         recipeBook = getIntent().getParcelableExtra("RECIPEBOOK");
         recipe = getIntent().getParcelableExtra("RECIPE");
         stepnum = getIntent().getIntExtra("STEPNUM",1);
+        Step step = recipe.getStep(stepnum );
         TextView steptextfield = findViewById(R.id.Stepnumber);
         steptextfield.setText(Integer.toString(stepnum));
         Button next = findViewById(R.id.nextStep);
         Button finish = findViewById(R.id.NextAddRecipe);
+        ImageView newStepImage = findViewById(R.id.newStepImage);
+        EditText action = findViewById(R.id.step);
+        action.setText(step.getAction());
+        try {
+            Bitmap map = loadImageFromStorage(step.getStepImage());
+            newStepImage.setImageBitmap(map);
+        } catch (FileNotFoundException e) {
+            try {
+                newStepImage.setImageBitmap(loadImageFromStorage("filenotfound.jpg",1));
+            } catch (FileNotFoundException ex) {
+                throw new RuntimeException(ex);
+            }
+        }
         next.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 System.out.println("Button Clicked");
@@ -211,4 +225,13 @@ public class AddStepActivity extends AppCompatActivity{
         startActivity(intent);
         Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show();
     }
+    private Bitmap loadImageFromStorage(String name, int root) throws FileNotFoundException {
+        File path = new File(getFilesDir(),"app_imageDir");
+        path.mkdirs();
+        Bitmap b;
+        File f=new File(path, name);
+        b = BitmapFactory.decodeStream(new FileInputStream(f));
+        return b;
+    }
+
 }

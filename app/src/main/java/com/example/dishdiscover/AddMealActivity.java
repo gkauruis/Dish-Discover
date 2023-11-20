@@ -79,6 +79,17 @@ public class AddMealActivity extends AppCompatActivity{
             serves.setText(String.valueOf(recipe.getMealFacts().getServes()));
             EditText rating = findViewById(R.id.Rating);
             rating.setText(String.valueOf(recipe.getMealFacts().getRating()));
+            try {
+                ImageView mealImage = findViewById(R.id.mealImage);
+                Bitmap map = loadImageFromStorage(mealName.getText().toString()+ ".jpg");
+                mealImage.setImageBitmap(map);
+            } catch (Exception e) {
+                try {
+                    Bitmap map = loadImageFromStorage("filenotfound.jpg");
+                } catch (FileNotFoundException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
         }
 
 
@@ -229,7 +240,7 @@ public class AddMealActivity extends AppCompatActivity{
         } else {
             mealfacts.put("Comments", mealComment.getText());
         }
-        mealfacts.put("MealImage","dosa.jpg");
+        mealfacts.put("MealImage",mealName.getText() + ".jpg");
 
         JSONArray cat = new JSONArray();
         cat.put(category.getText());
