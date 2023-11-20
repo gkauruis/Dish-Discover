@@ -2965,6 +2965,7 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable dosa
+drawable filenotfound
 drawable ic_arrow_back_black_24
 drawable ic_back_arrow
 drawable ic_back_black
@@ -3073,9 +3074,6 @@ id FirstFragment
 id Hard
 id HomeAddRecipe
 id Ingredient1
-id Ingredient2
-id Ingredient3
-id Ingredient4
 id META
 id MealDescription
 id MealName
@@ -3094,6 +3092,7 @@ id SYM
 id Salt
 id SecondFragment
 id Serves
+id StepImage
 id Stepnumber
 id Sugar
 id TOP_END
@@ -3157,15 +3156,14 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id addNewImage
+id addNewStepImage
 id alertTitle
 id aligned
 id all
 id allStates
 id always
 id amt1
-id amt2
-id amt3
-id amt4
 id androidx_window_activity_scope
 id animateToEnd
 id animateToStart
@@ -3362,6 +3360,7 @@ id material_timepicker_ok_button
 id material_timepicker_view
 id material_value_index
 id matrix
+id mealImage
 id message
 id middle
 id mini
@@ -3410,8 +3409,10 @@ id navigation_header_container
 id never
 id neverCompleteToEnd
 id neverCompleteToStart
+id newStepImage
 id newrecipe
 id next
+id nextIngredient
 id nextStep
 id noScroll
 id noState
@@ -3443,6 +3444,7 @@ id position
 id postLayout
 id pressed
 id prev
+id previousIngredient
 id previousStep
 id progress_circular
 id progress_horizontal
@@ -3594,9 +3596,6 @@ id triangle
 id unchecked
 id uniform
 id unit1
-id unit2
-id unit3
-id unit4
 id unlabeled
 id up
 id url
@@ -5266,3 +5265,4 @@ styleable ViewTransition android_id SharedValue SharedValueId clearsTag duration
 styleable include constraintSet
 xml backup_rules
 xml data_extraction_rules
+xml provider_paths

@@ -20,12 +20,12 @@
         "source": "com.example.dishdiscover.app-main-46:/layout/activity_main.xml"
     },
     {
-        "merged": "com.example.dishdiscover.app-merged_res-44:/navigation_nav_graph.xml.flat",
-        "source": "com.example.dishdiscover.app-main-46:/navigation/nav_graph.xml"
-    },
-    {
         "merged": "com.example.dishdiscover.app-merged_res-44:/xml_data_extraction_rules.xml.flat",
         "source": "com.example.dishdiscover.app-main-46:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.example.dishdiscover.app-merged_res-44:/navigation_nav_graph.xml.flat",
+        "source": "com.example.dishdiscover.app-main-46:/navigation/nav_graph.xml"
     },
     {
         "merged": "com.example.dishdiscover.app-merged_res-44:/mipmap-xxxhdpi_ic_launcher.webp.flat",
@@ -112,12 +112,20 @@
         "source": "com.example.dishdiscover.app-main-46:/mipmap-xxhdpi/ic_launcher_round.webp"
     },
     {
+        "merged": "com.example.dishdiscover.app-merged_res-44:/xml_provider_paths.xml.flat",
+        "source": "com.example.dishdiscover.app-main-46:/xml/provider_paths.xml"
+    },
+    {
         "merged": "com.example.dishdiscover.app-merged_res-44:/drawable_crepes.jpg.flat",
         "source": "com.example.dishdiscover.app-main-46:/drawable/crepes.jpg"
     },
     {
         "merged": "com.example.dishdiscover.app-merged_res-44:/drawable-v24_ic_launcher_foreground.xml.flat",
         "source": "com.example.dishdiscover.app-main-46:/drawable-v24/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.example.dishdiscover.app-merged_res-44:/drawable_filenotfound.jpg.flat",
+        "source": "com.example.dishdiscover.app-main-46:/drawable/filenotfound.jpg"
     },
     {
         "merged": "com.example.dishdiscover.app-merged_res-44:/mipmap-xhdpi_ic_launcher.webp.flat",

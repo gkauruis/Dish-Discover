@@ -200,6 +200,8 @@ public class AddStepActivity extends AppCompatActivity{
         recipeBook.addRecipe(recipe);
         save();
         Intent intent = new Intent(AddStepActivity.this,MainActivity.class);
+        intent.putExtra("RECIPE", recipe);
+        intent.putExtra("RECIPEBOOK", recipeBook);
         startActivity(intent);
         Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show();
     }
@@ -213,6 +215,7 @@ public class AddStepActivity extends AppCompatActivity{
         Intent intent = new Intent(AddStepActivity.this, AddIngredientActivity.class);
         intent.putExtra("RECIPE", recipe);
         intent.putExtra("RECIPEBOOK", recipeBook);
+        intent.putExtra("PASS", true);
         startActivity(intent);
         Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show();
     }

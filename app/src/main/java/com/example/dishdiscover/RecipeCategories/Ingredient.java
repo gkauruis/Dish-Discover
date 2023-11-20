@@ -72,6 +72,13 @@ public class Ingredient implements Parcelable {
         this.unit = unit;
     }
 
+    public boolean exists() {
+        if(name.length() == 0) {
+            return false;
+        } else {
+            return true;
+        }
+    }
 
     public int describeContents() {
         return 0;

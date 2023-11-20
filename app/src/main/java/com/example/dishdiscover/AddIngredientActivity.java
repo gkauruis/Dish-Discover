@@ -20,13 +20,15 @@ import org.json.JSONObject;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.List;
 
 public class AddIngredientActivity extends AppCompatActivity{
 
     RecipeBook recipeBook;
     Recipe recipe;
     JSONObject recipeJson;
-    int ingNum = 1;
+    int ingNum;
+    boolean passed;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,8 +37,20 @@ public class AddIngredientActivity extends AppCompatActivity{
         recipeBook = getIntent().getParcelableExtra("RECIPEBOOK");
         recipe = getIntent().getParcelableExtra("RECIPE");
         ingNum = getIntent().getIntExtra("INGNUM",1);
+        passed = getIntent().getBooleanExtra("PASS", false);
         Button next = findViewById(R.id.NextAddRecipe);
         Button nextIng = findViewById(R.id.nextIngredient);
+        if(!recipe.getIngredients().isEmpty() && passed) {
+            Ingredient ingredient = recipe.getIngredients().get(ingNum-1);
+            if(ingredient.exists()) {
+                EditText ing1 = findViewById(R.id.Ingredient1);
+                ing1.setText(ingredient.getName());
+                EditText amt1 = findViewById(R.id.amt1);
+                amt1.setText(String.valueOf(ingredient.getAmt()));
+                EditText unit1 = findViewById(R.id.unit1);
+                unit1.setText(ingredient.getUnit());
+            }
+        }
         next.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 System.out.println("Button Clicked");
@@ -53,7 +67,7 @@ public class AddIngredientActivity extends AppCompatActivity{
             public void onClick(View v) {
                 System.out.println("Button Clicked");
                 try {
-                    addNutrition();
+                    addIngredient();
                 } catch (JSONException e) {
                     throw new RuntimeException(e);
                 }
@@ -78,7 +92,6 @@ public class AddIngredientActivity extends AppCompatActivity{
 
         });
         Button prevIng = findViewById(R.id.previousIngredient);
-        //disable the previous step on the first step as there is no previous step from the first
         if (ingNum < 2) {
             prevIng.setEnabled(false);
         }
@@ -127,7 +140,7 @@ public class AddIngredientActivity extends AppCompatActivity{
             }
         }
     }
-    public void addNutrition() throws JSONException {
+    public void addIngredient() throws JSONException {
         Ingredient newIngredient;
         boolean valid = true;
         String er = "Field required";
@@ -147,12 +160,13 @@ public class AddIngredientActivity extends AppCompatActivity{
             valid = false;
         }
         if(valid) {
-            newIngredient = new Ingredient(ing1.getText().toString(), Integer.parseInt(amt1.getText().toString()), unit1.getText().toString());
+            newIngredient = new Ingredient(ing1.getText().toString(), Double.parseDouble(amt1.getText().toString()), unit1.getText().toString());
             recipe.addIngredient(newIngredient);
             Intent intent = new Intent(AddIngredientActivity.this, AddIngredientActivity.class);
             intent.putExtra("RECIPE", recipe);
             intent.putExtra("RECIPEBOOK", recipeBook);
             intent.putExtra("INGNUM", ingNum+1);
+            intent.putExtra("PASS", passed);
             startActivity(intent);
             Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show();
         }
@@ -177,9 +191,11 @@ public class AddIngredientActivity extends AppCompatActivity{
             valid = false;
         }
         if(valid) {
-            newIngredient = new Ingredient(ing1.getText().toString(), Integer.parseInt(amt1.getText().toString()), unit1.getText().toString());
+            newIngredient = new Ingredient(ing1.getText().toString(), Double.parseDouble(amt1.getText().toString()), unit1.getText().toString());
             recipe.addIngredient(newIngredient);
             Intent intent = new Intent(AddIngredientActivity.this, AddStepActivity.class);
+            intent.putExtra("RECIPE", recipe);
+            intent.putExtra("RECIPEBOOK", recipeBook);
             startActivity(intent);
             Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show();
         }
@@ -202,7 +218,8 @@ public class AddIngredientActivity extends AppCompatActivity{
         Intent intent = new Intent(AddIngredientActivity.this, AddIngredientActivity.class);
         intent.putExtra("RECIPE", recipe);
         intent.putExtra("RECIPEBOOK", recipeBook);
-        intent.putExtra("INGNUM", ingNum - 1);
+        intent.putExtra("INGNUM", ingNum-1);
+        intent.putExtra("PASS", true);
         startActivity(intent);
         Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show();
     }
