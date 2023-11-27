@@ -49,7 +49,7 @@ public class RecipeActivity extends AppCompatActivity{
         ArrayList<String> ingredientsList = new ArrayList<>();
 
         for (Ingredient ingredient : recipe.getIngredients()){
-            String ingredientsInfo = ingredient.getAmount() + " " + ingredient.getUnit() + " " + ingredient.getName();
+            String ingredientsInfo = ingredient.getAmount() + " " + ingredient.getName();
             ingredientsList.add(ingredientsInfo);
         }
 
