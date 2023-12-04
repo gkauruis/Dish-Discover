@@ -130,7 +130,8 @@ public class RecipeActivity extends AppCompatActivity{
 
     @Override
     public boolean onSupportNavigateUp() {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, MealFactsActivty.class);
+        intent.putExtra("RECIPE", recipe);
         startActivity(intent);
         finish();
         return true;

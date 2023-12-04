@@ -35,6 +35,11 @@ public class MealFactsActivty extends AppCompatActivity {
 
         recipe = getIntent().getParcelableExtra("RECIPE");
 
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
         TextView recipeName = findViewById(R.id.recipeNameTextView);
         recipeName.setText(recipe.getRecipeName());
 
@@ -104,5 +109,13 @@ public class MealFactsActivty extends AppCompatActivity {
         intent.putExtra("RECIPE", recipe);
         startActivity(intent);
         Toast.makeText(this, "Ingredients", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        finish();
+        return true;
     }
 }
