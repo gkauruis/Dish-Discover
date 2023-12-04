@@ -88,6 +88,14 @@ public class StepActivity extends AppCompatActivity{
                 OnStepsClicked(recipe,stepNum + 1);
             }
         });
+        Button home = findViewById(R.id.homeview);
+        home.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                System.out.println("Button Clicked");
+                OnHomeClicked();
+            }
+
+        });
     }
         public void OnStepsClicked(Recipe recipe,int step) {
             Intent intent = new Intent(StepActivity.this, StepActivity.class);
@@ -96,6 +104,12 @@ public class StepActivity extends AppCompatActivity{
             startActivity(intent);
             Toast.makeText(this, recipe.getRecipeName(), Toast.LENGTH_SHORT).show();
         }
+
+    public void OnHomeClicked(){
+        Intent intent = new Intent(StepActivity.this,MainActivity.class);
+        startActivity(intent);
+        Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show();
+    }
 
         @Override
         public boolean onSupportNavigateUp() {

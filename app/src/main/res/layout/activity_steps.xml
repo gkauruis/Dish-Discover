@@ -20,9 +20,9 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="#C9F4F1EF"
+            app:navigationIcon="@drawable/ic_back_black"
             app:title="Dish Discover"
-            app:titleTextColor="@color/black"
-            app:navigationIcon="@drawable/ic_back_black" />
+            app:titleTextColor="@color/black" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -59,9 +59,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        app:cardBackgroundColor="#ffffff"
         app:cardCornerRadius="8dp"
-        app:cardElevation="4dp"
-        app:cardBackgroundColor="#ffffff">
+        app:cardElevation="4dp">
 
         <TextView
             android:id="@+id/RecipeInsruction"
@@ -77,18 +77,18 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center">
+        android:gravity="center"
+        android:orientation="horizontal">
 
         <ImageButton
             android:id="@+id/prev"
             android:layout_width="0dp"
             android:layout_height="53dp"
             android:layout_weight="1"
+            android:alpha="1.0"
             android:background="@android:color/transparent"
             android:contentDescription="Previous Step"
             android:src="@drawable/ic_back_arrow"
-            android:alpha="1.0"
             android:tooltipText="Go to the Previous Step" />
 
         <ImageButton
@@ -96,11 +96,17 @@
             android:layout_width="0dp"
             android:layout_height="53dp"
             android:layout_weight="1"
+            android:alpha="1.0"
             android:background="@android:color/transparent"
             android:contentDescription="Next Step"
             android:src="@drawable/ic_forward_arrow"
-            android:alpha="1.0"
             android:tooltipText="Go to the Next Step" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/homeview"
+        android:layout_width="match_parent"
+        android:layout_height="63dp"
+        android:text="Home" />
 </LinearLayout>
