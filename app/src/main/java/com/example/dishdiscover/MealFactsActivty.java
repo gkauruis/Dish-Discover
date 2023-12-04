@@ -53,7 +53,7 @@ public class MealFactsActivty extends AppCompatActivity {
         prep.setText("Prep Time: " + String.valueOf(recipe.getMealFacts().getPrep()) + " minutes");
 
         TextView cooktime = findViewById(R.id.cooktimeTextView);
-        cooktime.setText("Cooke Time: " + String.valueOf(recipe.getMealFacts().getCooktime()) + " minutes");
+        cooktime.setText("Cook Time: " + String.valueOf(recipe.getMealFacts().getCooktime()) + " minutes");
 
         TextView serves = findViewById(R.id.servesTextView);
         serves.setText("Serves: " + String.valueOf(recipe.getMealFacts().getServes()));
