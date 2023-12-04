@@ -59,6 +59,12 @@
             android:parentActivityName=".RecipeActivity"
             android:theme="@style/Theme.DishDiscover" />
         <activity
+            android:name=".MealFactsActivty"
+            android:exported="false"
+            android:label="MealFactsActivity"
+            android:parentActivityName=".RecipeActivity"
+            android:theme="@style/Theme.DishDiscover" />
+        <activity
             android:name=".RecipeActivity"
             android:exported="false"
             android:label="@string/title_activity_recipe"

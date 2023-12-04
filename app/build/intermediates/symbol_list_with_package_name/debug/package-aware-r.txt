@@ -3190,6 +3190,7 @@ id bounceEnd
 id bounceStart
 id buttonPanel
 id cache_measures
+id calTextView
 id callMeasure
 id cancel_button
 id carryVelocity
@@ -3211,6 +3212,7 @@ id clip_vertical
 id clockwise
 id closest
 id collapseActionView
+id commentsTextView
 id compress
 id confirm_button
 id constraint
@@ -3219,6 +3221,7 @@ id content
 id contentPanel
 id contiguous
 id continuousVelocity
+id cooktimeTextView
 id coordinator
 id cos
 id counterclockwise
@@ -3234,12 +3237,14 @@ id decor_content_parent
 id default_activity_button
 id deltaRelative
 id dependency_ordering
+id descriptionTextView
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
 id dialog_button
+id difficultyTextView
 id dimensions
 id direct
 id disableHome
@@ -3272,6 +3277,7 @@ id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
 id fade
+id fatTextView
 id fill
 id fill_horizontal
 id fill_vertical
@@ -3316,6 +3322,7 @@ id indeterminate
 id info
 id ingredientsLabelTextView
 id ingredientsListView
+id ingredientview
 id invisible
 id inward
 id italic
@@ -3360,6 +3367,7 @@ id material_timepicker_ok_button
 id material_timepicker_view
 id material_value_index
 id matrix
+id mealFactsLabelTextView
 id mealImage
 id message
 id middle
@@ -3442,6 +3450,7 @@ id percent
 id pin
 id position
 id postLayout
+id prepTextView
 id pressed
 id prev
 id previousIngredient
@@ -3449,6 +3458,7 @@ id previousStep
 id progress_circular
 id progress_horizontal
 id radio
+id ratingTextView
 id ratio
 id recipeNameTextView
 id recipe_name
@@ -3465,6 +3475,7 @@ id right_side
 id rounded
 id row_index_key
 id rtl
+id saltTextView
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -3502,6 +3513,7 @@ id search_voice_btn
 id select_dialog_listview
 id selected
 id selection_type
+id servesTextView
 id sharedValueSet
 id sharedValueUnset
 id shortcut
@@ -3544,6 +3556,7 @@ id stop
 id stretch
 id submenuarrow
 id submit_area
+id sugarTextView
 id supportScrollUp
 id tabMode
 id tag_accessibility_actions
@@ -3599,6 +3612,7 @@ id unit1
 id unlabeled
 id up
 id url
+id urlTextView
 id useLogo
 id vertical_only
 id view_offset_helper
@@ -3738,6 +3752,7 @@ layout activity_addnutrition
 layout activity_addrecipe
 layout activity_addstep
 layout activity_main
+layout activity_mealfacts
 layout activity_recipe
 layout activity_steps
 layout content_recipe

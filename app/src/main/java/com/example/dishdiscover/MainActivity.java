@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity implements SelectListener{
 
     @Override
     public void OnRecipeClicked(Recipe recipe) {
-        Intent intent = new Intent(MainActivity.this, RecipeActivity.class);
+        Intent intent = new Intent(MainActivity.this, MealFactsActivty.class);
         intent.putExtra("RECIPE", recipe);
         startActivity(intent);
         Toast.makeText(this, recipe.getRecipeName(), Toast.LENGTH_SHORT).show();

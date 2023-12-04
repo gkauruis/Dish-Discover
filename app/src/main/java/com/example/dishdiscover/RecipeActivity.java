@@ -72,7 +72,6 @@ public class RecipeActivity extends AppCompatActivity{
                 System.out.println("Button Clicked");
                 OnHomeClicked();
             }
-
         });
 
     }
@@ -90,6 +89,7 @@ public class RecipeActivity extends AppCompatActivity{
         startActivity(intent);
         Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show();
     }
+
     public void addnew(){
         save();
     }
