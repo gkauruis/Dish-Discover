@@ -62,7 +62,7 @@ public class StepActivity extends AppCompatActivity{
             next.setAlpha(0.3f); // Reduce button opacity
             next.setTooltipText(null);
         }
-
+        //Requirement Viewing a Recipe 3
         ImageView newStepImage = findViewById(R.id.StepImage);
         try {
             Bitmap map = loadImageFromStorage(step.getStepImage());

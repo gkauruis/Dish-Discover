@@ -77,10 +77,11 @@ public class MainActivity extends AppCompatActivity implements SelectListener{
         //getResources().getIdentifier(mealImageResource, "drawable", getPackageName())
         recipeBook = new RecipeBook(this.recipeJson);
         recipes = recipeBook.getBook();
-
+        // Requirements (main/Launch page 1)
         recyclerView.setLayoutManager(new GridLayoutManager(MainActivity.this, 2));
         recyclerView.setAdapter(new RecyclerAdapter(getApplicationContext(), recipes, this));
         Button newrecipe = findViewById(R.id.newrecipe);
+        //Requirements (Main Page 2)
         newrecipe.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 System.out.println("Button Clicked");

@@ -51,6 +51,7 @@ public class AddStepActivity extends AppCompatActivity{
         steptextfield.setText(Integer.toString(stepnum));
         Button next = findViewById(R.id.nextStep);
         Button finish = findViewById(R.id.NextAddRecipe);
+        //Requirement Adding a recipe 4
         ImageView newStepImage = findViewById(R.id.newStepImage);
         EditText action = findViewById(R.id.step);
         action.setText(step.getAction());
@@ -64,6 +65,7 @@ public class AddStepActivity extends AppCompatActivity{
                 throw new RuntimeException(ex);
             }
         }
+        //When clicked will add step and move to next step
         next.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 System.out.println("Button Clicked");
@@ -71,6 +73,8 @@ public class AddStepActivity extends AppCompatActivity{
             }
 
         });
+        //Requirement Adding a Recipe 6
+        //When clicked will finish the method and go to home completing the recipe and saving it to recipes
         finish.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 System.out.println("Button Clicked");
@@ -79,6 +83,7 @@ public class AddStepActivity extends AppCompatActivity{
 
         });
         Button home = findViewById(R.id.HomeAddRecipe);
+        //Will take the user home
         home.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 System.out.println("Button Clicked");
@@ -87,6 +92,7 @@ public class AddStepActivity extends AppCompatActivity{
 
         });
         Button prev = findViewById(R.id.PreviousAddRecipe);
+        //Will take the user to the previous page Add Ingredients
         prev.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 System.out.println("Button Clicked");
@@ -100,6 +106,7 @@ public class AddStepActivity extends AppCompatActivity{
         if (stepnum < 2) {
             prevstep.setEnabled(false);
         }
+        //will take the user to previous step
         prevstep.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 System.out.println("Button Clicked");
