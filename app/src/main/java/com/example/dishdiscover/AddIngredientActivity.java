@@ -45,12 +45,14 @@ public class AddIngredientActivity extends AppCompatActivity{
             if(ingredient.exists()) {
                 EditText ing1 = findViewById(R.id.Ingredient1);
                 ing1.setText(ingredient.getName());
+                //Requirement Adding a recipe 5
                 EditText amt1 = findViewById(R.id.amt1);
                 amt1.setText(String.valueOf(ingredient.getAmt()));
                 EditText unit1 = findViewById(R.id.unit1);
                 unit1.setText(ingredient.getUnit());
             }
         }
+        // When clicked it will go to done() for adding the ingredients to the recipe and move on to Steps
         next.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 System.out.println("Button Clicked");
@@ -63,6 +65,7 @@ public class AddIngredientActivity extends AppCompatActivity{
             }
 
         });
+        //When clicked it will save the individual ingredient and move to the next ingredient to add
         nextIng.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 System.out.println("Button Clicked");
@@ -76,6 +79,7 @@ public class AddIngredientActivity extends AppCompatActivity{
         });
 
         Button home = findViewById(R.id.HomeAddRecipe);
+        // When clicked it will take user home
         home.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 System.out.println("Button Clicked");
@@ -84,6 +88,7 @@ public class AddIngredientActivity extends AppCompatActivity{
 
         });
         Button prev = findViewById(R.id.PreviousAddRecipe);
+        //When clicked will take the user back to previous page add nutrition
         prev.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 System.out.println("Button Clicked");

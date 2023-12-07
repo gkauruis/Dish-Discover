@@ -57,8 +57,9 @@ public class AddMealActivity extends AppCompatActivity{
         if(recipe == null) {
             recipe = new Recipe();
         }
-
+        //Requirement Adding a recipe 2 and 3
         if(recipe.getMealFacts().exists()) {
+            //preload recipe if exists
             EditText mealName = findViewById(R.id.MealName);
             mealName.setText(recipe.getMealFacts().getMealName());
             EditText mealDescription = findViewById(R.id.Description);
@@ -79,6 +80,7 @@ public class AddMealActivity extends AppCompatActivity{
             serves.setText(String.valueOf(recipe.getMealFacts().getServes()));
             EditText rating = findViewById(R.id.Rating);
             rating.setText(String.valueOf(recipe.getMealFacts().getRating()));
+            //Requirment add a recipe 1
             try {
                 ImageView mealImage = findViewById(R.id.mealImage);
                 Bitmap map = loadImageFromStorage(mealName.getText().toString()+ ".jpg");
@@ -94,6 +96,7 @@ public class AddMealActivity extends AppCompatActivity{
 
 
         Button next = findViewById(R.id.NextAddRecipe);
+        //When button is clicked it will save meal and move on to Add Nutrients
 
         next.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -125,6 +128,7 @@ public class AddMealActivity extends AppCompatActivity{
         );
         Button home = findViewById(R.id.HomeAddRecipe);
         Button addImage = findViewById(R.id.addNewImage);
+        //When clicked will take user home
         home.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 System.out.println("Button Clicked");

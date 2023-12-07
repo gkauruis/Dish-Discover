@@ -32,7 +32,7 @@ public class RecipeActivity extends AppCompatActivity{
         setContentView(R.layout.activity_recipe);
 
         recipe = getIntent().getParcelableExtra("RECIPE");
-
+        //Requirements (Viewing a Recipe 1)
         TextView recipeName = findViewById(R.id.recipeNameTextView);
         recipeName.setText(recipe.getRecipeName());
 
@@ -56,7 +56,7 @@ public class RecipeActivity extends AppCompatActivity{
 
         ingredientsListView.setAdapter(arrayAdapter);
 
-
+        //Requirement Viewing a recipe 2
         Button buttonOne = findViewById(R.id.stepsview);
 
         buttonOne.setOnClickListener(new View.OnClickListener() {

@@ -51,6 +51,7 @@ public class AddNutritionActivity extends AppCompatActivity{
             EditText fat = findViewById(R.id.Fat);
             fat.setText(String.valueOf(recipe.getNutrition().getFat()));
         }
+        //When clicked will save nutrition data and to go next page Add Ingredients
         next.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 System.out.println("Button Clicked");
@@ -64,6 +65,7 @@ public class AddNutritionActivity extends AppCompatActivity{
 
         });
         Button home = findViewById(R.id.HomeAddRecipe);
+        // when clicked will take back to home page
         home.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 System.out.println("Button Clicked");
@@ -73,6 +75,7 @@ public class AddNutritionActivity extends AppCompatActivity{
         });
 
         Button prev = findViewById(R.id.PreviousAddRecipe);
+        //When clicked will go to the previous page which is add meal
         prev.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 System.out.println("Button Clicked");
