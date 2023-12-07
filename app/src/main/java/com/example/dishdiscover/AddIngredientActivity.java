@@ -206,7 +206,7 @@ public class AddIngredientActivity extends AppCompatActivity{
     }
 
     public void OnHomeClicked(){
-        Intent intent = new Intent(AddIngredientActivity.this,AddStepActivity.class);
+        Intent intent = new Intent(AddIngredientActivity.this,MainActivity.class);
         startActivity(intent);
         Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show();
     }
