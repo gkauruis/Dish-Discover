@@ -3549,6 +3549,7 @@ int id startVertical 0x7f0801e9
 int id staticLayout 0x7f0801ea
 int id staticPostLayout 0x7f0801eb
 int id step 0x7f0801ec
+int id stepsLabelTextView 0x7f08023f
 int id stepsnav 0x7f0801ed
 int id stepsview 0x7f0801ee
 int id stop 0x7f0801ef

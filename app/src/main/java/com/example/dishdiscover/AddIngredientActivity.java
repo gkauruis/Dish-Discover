@@ -171,7 +171,6 @@ public class AddIngredientActivity extends AppCompatActivity{
             intent.putExtra("RECIPE", recipe);
             intent.putExtra("RECIPEBOOK", recipeBook);
             intent.putExtra("INGNUM", ingNum+1);
-            intent.putExtra("PASS", passed);
             startActivity(intent);
             Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show();
         }
@@ -216,6 +215,7 @@ public class AddIngredientActivity extends AppCompatActivity{
         Intent intent = new Intent(AddIngredientActivity.this, AddNutritionActivity.class);
         intent.putExtra("RECIPE", recipe);
         intent.putExtra("RECIPEBOOK", recipeBook);
+        intent.putExtra("PASS", passed);
         startActivity(intent);
         Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show();
     }

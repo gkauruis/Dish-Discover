@@ -3550,6 +3550,7 @@ id startVertical
 id staticLayout
 id staticPostLayout
 id step
+id stepsLabelTextView
 id stepsnav
 id stepsview
 id stop

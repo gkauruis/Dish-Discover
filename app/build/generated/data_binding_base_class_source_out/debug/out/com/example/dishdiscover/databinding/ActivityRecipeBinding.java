@@ -27,9 +27,6 @@ public final class ActivityRecipeBinding implements ViewBinding {
   public final AppBarLayout appBarLayout;
 
   @NonNull
-  public final Button homeview;
-
-  @NonNull
   public final TextView ingredientsLabelTextView;
 
   @NonNull
@@ -48,12 +45,11 @@ public final class ActivityRecipeBinding implements ViewBinding {
   public final Toolbar toolbar;
 
   private ActivityRecipeBinding(@NonNull LinearLayout rootView, @NonNull AppBarLayout appBarLayout,
-      @NonNull Button homeview, @NonNull TextView ingredientsLabelTextView,
-      @NonNull ListView ingredientsListView, @NonNull TextView recipeNameTextView,
-      @NonNull LinearLayout stepsnav, @NonNull Button stepsview, @NonNull Toolbar toolbar) {
+      @NonNull TextView ingredientsLabelTextView, @NonNull ListView ingredientsListView,
+      @NonNull TextView recipeNameTextView, @NonNull LinearLayout stepsnav,
+      @NonNull Button stepsview, @NonNull Toolbar toolbar) {
     this.rootView = rootView;
     this.appBarLayout = appBarLayout;
-    this.homeview = homeview;
     this.ingredientsLabelTextView = ingredientsLabelTextView;
     this.ingredientsListView = ingredientsListView;
     this.recipeNameTextView = recipeNameTextView;
@@ -95,12 +91,6 @@ public final class ActivityRecipeBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.homeview;
-      Button homeview = ViewBindings.findChildViewById(rootView, id);
-      if (homeview == null) {
-        break missingId;
-      }
-
       id = R.id.ingredientsLabelTextView;
       TextView ingredientsLabelTextView = ViewBindings.findChildViewById(rootView, id);
       if (ingredientsLabelTextView == null) {
@@ -133,7 +123,7 @@ public final class ActivityRecipeBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityRecipeBinding((LinearLayout) rootView, appBarLayout, homeview,
+      return new ActivityRecipeBinding((LinearLayout) rootView, appBarLayout,
           ingredientsLabelTextView, ingredientsListView, recipeNameTextView, stepsnav, stepsview,
           toolbar);
     }

@@ -77,6 +77,7 @@ id recycler_view
 id saltTextView
 id servesTextView
 id step
+id stepsLabelTextView
 id stepsnav
 id stepsview
 id sugarTextView
