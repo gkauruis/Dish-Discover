@@ -1,23 +1,19 @@
 package com.example.dishdiscover;
+
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.widget.Toolbar;
-
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
+import androidx.appcompat.widget.Toolbar;
 
 import com.example.dishdiscover.RecipeCategories.Recipe;
 import com.example.dishdiscover.RecipeCategories.Step;
@@ -25,7 +21,6 @@ import com.example.dishdiscover.RecipeCategories.Step;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 
 public class StepActivity extends AppCompatActivity{
 
@@ -42,6 +37,9 @@ public class StepActivity extends AppCompatActivity{
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
+
+        TextView ingredientsTitle = findViewById(R.id.stepsLabelTextView);
+        ingredientsTitle.setText("Steps");
 
         recipe = getIntent().getParcelableExtra("RECIPE");
         stepNum = getIntent().getIntExtra("STEPNUM",1);

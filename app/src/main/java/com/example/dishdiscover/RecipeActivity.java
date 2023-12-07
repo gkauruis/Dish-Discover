@@ -1,4 +1,5 @@
 package com.example.dishdiscover;
+
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,8 +13,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.dishdiscover.RecipeCategories.Ingredient;
 import com.example.dishdiscover.RecipeCategories.Recipe;
@@ -66,13 +65,6 @@ public class RecipeActivity extends AppCompatActivity{
                 OnStepsClicked(recipe);
             }
         });
-        Button home = findViewById(R.id.homeview);
-        home.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                System.out.println("Button Clicked");
-                OnHomeClicked();
-            }
-        });
 
     }
 
@@ -83,11 +75,6 @@ public class RecipeActivity extends AppCompatActivity{
         intent.putExtra("STEPNUM",1);
         startActivity(intent);
         Toast.makeText(this, recipe.getRecipeName(), Toast.LENGTH_SHORT).show();
-    }
-    public void OnHomeClicked(){
-        Intent intent = new Intent(RecipeActivity.this,MainActivity.class);
-        startActivity(intent);
-        Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show();
     }
 
     public void addnew(){

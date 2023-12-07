@@ -157,11 +157,5 @@
 
     </LinearLayout>
 
-    <!-- Add a separator or divider between recipe name and ingredients -->
-
-    <!-- TextView to display the "Ingredients" label -->
-
-    <!-- Use a RecyclerView or a LinearLayout to dynamically display ingredients -->
-
 
 </LinearLayout>

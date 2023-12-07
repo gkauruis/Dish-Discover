@@ -32,20 +32,21 @@
         android:layout_height="wrap_content"
         android:fontFamily="georgia"
         android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        android:textStyle="bold"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
-    <!-- Add a separator or divider between recipe name and ingredients -->
     <TextView
-        android:id="@+id/ingredientsLabelTextView"
+        android:id="@+id/stepsLabelTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="georgia"
-        android:textAlignment="center"
+        android:textAlignment="textStart"
         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
+        android:paddingBottom="20dp"
         android:background="@color/black" />
 
     <!-- Floating box for step display -->
@@ -107,6 +108,7 @@
     <Button
         android:id="@+id/homeview"
         android:layout_width="match_parent"
-        android:layout_height="63dp"
-        android:text="Home" />
+        android:layout_height="57dp"
+        android:text="Home"
+        android:textAlignment="center" />
 </LinearLayout>
